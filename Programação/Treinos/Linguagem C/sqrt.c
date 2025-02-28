@@ -3,9 +3,10 @@
 #include <stdio.h>
 #include <math.h>
 
-int main()
+int main(void)
 {
-    double num, square_root;
+    double num = 0;
+	   double square_root;
     printf("Add um número:\n");
     scanf("%lf", &num);
 
