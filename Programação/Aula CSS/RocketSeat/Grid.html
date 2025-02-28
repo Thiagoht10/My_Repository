@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        /*O grid é aplicado no pai dos elementos para que posso trabalhar
+        nos elementos filhos*/
+
+        margin: 0; /*Margem 0 em todo o documento*/
+        display: grid; /*Grid*/
+        height: 100vh; /*Define a altura para ocupar toda a página*/
+        grid-template-areas: /*Define as áreas do documento*/
+        "header header" 
+        "main aside"
+        "footer footer";
+        /*Aqui se define as linhas e as colunas e indica onde cada elemento
+        vai ocupar nessa divisão*/
+
+        grid-template-rows: 5rem 1fr 6rem; /*Define o tamanho das linhas*/
+        grid-template-columns: 1fr 14rem; /*Define o tamanho das colunas*/
+    }
+    header{
+        grid-area: header; /*Aqui indica qual é a área do grid*/
+        background-color: green;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.5rem;
+        /*É possível usar o flex e o grid juntos, porem nunca no mesmo elemento*/
+        /*Nesse caso o flex está trabalhando apenas no elemento filho header*/
+    }
+    main{
+        grid-area: main; /*Aqui indica qual é a área do grid*/
+        background-color: red;
+    }
+    aside{
+        grid-area: aside; /*Aqui indica qual é a área do grid*/
+        background-color: blue;
+    }
+    footer{
+        grid-area: footer; /*Aqui indica qual é a área do grid*/
+        background-color: gray;
+    }
+</style>
+<body>
+    <header>
+        <div>Logo</div>
+        <div>Menu</div>
+    </header>
+    
+    <main>Conteúdo</main>
+    
+    <aside>Informações Adicionais</aside>
+    
+    <footer>Rodapé</footer>
+</body>
+</html>

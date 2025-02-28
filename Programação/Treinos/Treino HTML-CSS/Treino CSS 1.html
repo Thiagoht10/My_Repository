@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino-CSS-HTML</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-text: rgb(40, 153, 40); /*Variável css sendo usada no elemento root. O elemento root pode ser usado no html inteiro.*/
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+        .paragraf {
+            text-align: justify; /*Alinhamento do texto*/ /*O texto se ajusta ao tamanho do elemento*/
+            line-height: 25px; /*Altera a altura entre as linhas*/
+        }
+
+        [type="radio"]{ /*Seletor do tipo [attr=value]*/
+            margin-top: 2px;
+        }
+
+        .silver-background { /*Seletor de uma classe no css*/
+            background-color: rgba(45, 45, 45, 0.15); /*RGB são as cores: red, green e blue. O "a" é o nivel de opacidade*/
+
+        }
+        
+        .size-image{
+            width: 80px;
+            height: 80px; /*Altura de um elemento*/
+            border-style: solid; /*Estilo da borda*/
+            border-color: var(--color-text);
+            border-width: 5px;
+            /* OU */
+            /* border: solid red 10px; */
+            border-radius: 10px; /*Raio da borda*/
+        }
+
+        #chamada-rede-social{
+            color: var(--color-text); /*Aplicação da varíavel css criada no elemento root*/
+            background-color: yellow;
+            width: 250px; /*Largura de um elemento*/
+            font-size: 20px; /*Tamanho da fonte*/
+            padding-top: 5px;
+            padding-bottom: 5px; /*Padding é o preenchimento(estofado) do elemento*/
+            position: relative; /*Permite mover o elemento dentro da caixa, mas nao altera o fluxo do elemento*/
+            left: 15px; /*Afasta da esquerda o elemento em 15px*/
+        }
+
+        .conf-h{
+            color: #0A1A66;
+            font-family:'Dancing Script'; /*Fonte importada*/
+            text-align: center; /*Alinhamento do texto ao centro*/
+            box-shadow: 0 5px 10px rgba(10,26,102,0.25); /*Sombra na caixa do elemento*/
+            text-shadow: 0 5px 25px rgba(10,26,102,0.6); /*Sombra no texto*/
+            
+        }
+
+        .conf-h2{
+            color: #1638E0;
+            opacity: 0.85; /*Opacidade: 0 é transparente - 1 é opaco(100% da cor)*/
+            text-transform: uppercase; /*Transforma o texto em maiúsculo e minúsculo*/
+            font-weight: 100; /*Defini a espessura das letras*/
+            width: 680px;
+            padding: auto; /*Retira o padding do elemento*/
+            margin: auto; /*Centraliza o elemento no meio*/
+        }
+
+        #saiba-mais:hover{ /*:hover é uma pseudo classe que altera o estilo do elemento ao passar o mouse*/
+            color: red;
+            font-size: 25px;
+            text-transform: uppercase;
+        }
+        #saiba-mais {
+           /* float: right; /*Posiciona o elemento ao lado esquerdo ou direito*/
+            width: 10%; /*Usado junto com o float para posicionar o elemento*/
+        }
+        #link-wpp {
+            height: 50px;
+            width: 92px;
+            position: fixed; /*Altera o fluxo de posicionamento dos elementos e permite fixar o elemento na tela */
+            bottom: 80px;
+            left: 1245px;
+        }
+        #ball {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%; /*Cria imagem redonda*/
+            background: linear-gradient(45deg, red, black); /*Cria transição de cores orientado a ângulo*/
+            position: relative;
+            left: 20px;
+            top: 25px;
+            transform: scale(1.5); /*Altera a escala de tamanho do elemento*/
+            margin-bottom: 45px;
+        }
+        #ball:hover {
+            background: linear-gradient(90deg, yellow, black); /*Cria cores em gradiente*/
+            transform: scale(1.7); /*Altera a escala do elemento*/
+        }
+        #boxX{
+            height: 100px;
+            width: 200px;
+            background: repeating-linear-gradient(
+                45deg,
+                yellow 0px,
+                yellow 50px,
+                black 50px,
+                black 100px
+            );
+            margin: 80px 0px 40px 40px ;
+            transform: skewX(-32deg); /*Distorce o elemento no eixo X */
+        }
+        #boxY{
+            height: 100px;
+            width: 200px;
+            background: repeating-linear-gradient( /*cria repetição de gradiente*/
+                45deg,
+                yellow 0px,     /*Cor que inicia o gradiente*/
+                yellow 50px,    /*Onde termina a segunda cor do gradiente*/
+                black 50px,     /*Onde inicia a segunda cor*/
+                black 100px     /*Onde termina a segunda cor*/
+            );
+            margin: 80px 0px 40px 40px ;
+            transform: skewY(12deg); /*Distoce o elemento no eixo Y */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="conf-h">Primeiro treino ccs e html</h1>
+        <hr> <!--adiciona uma linha de separação-->
+    </div>
+
+    <div>
+        <h2 class="conf-h2">Aqui serão expostos algumas práticas aprendidas.</h2>
+    </div>
+
+    <div class="silver-background">
+
+        <p><u>Venha aprender também!!</u></p>
+        <p>Aqui estão agumas das minhas fontes de estudo:</p>
+
+        <ul> <!--Lista não ordenada-->
+            <li>FreeCodeCamp</li>
+            <li>RocketSeat</li>
+        </ul>
+
+    </div>
+        
+    <div>
+        <p id="chamada-rede-social"><strong> Acesse minhas redes sociais:</strong></p>
+        
+        <a href="https://www.instagram.com/guinn_souza/" target="_blank"> <!--Target= "_blanck" - Abre uma nova guia ao clicar no link-->
+            <img class="size-image" src="https://i.pinimg.com/originals/60/31/2d/60312da1fe41b1f2a8a84e4c959b4e0e.png" alt=""></a>
+
+        <a href="https://www.facebook.com/thiago.desouzasilva.37/" target="_blank"> <!--Abre uma nova guia ao clicar no linl-->
+            <img class="size-image" src="https://i.pinimg.com/564x/2a/44/46/2a4446bf4c7443a7468b17b52314e8eb.jpg" alt=""></a>
+        <br>
+        <a id="saiba-mais" href="https://google.com.br" target="_blank">Saiba mais!</a>
+    </div>
+    <div>
+        <p>Você é maior de 18 anos?</p>
+        <form action="">
+            <label for="idade1">
+                <input type="radio" name="idade" id="idade1"> Maior de 18 anos.
+            </label>
+            <label for="idade2">
+                <input type="radio" name="idade" id="idade2"> Menor de 18 anos.
+            </label>
+        </form>
+    </div>
+
+    <div id="ball">
+    </div>
+
+    <div id="boxX">
+
+    </div>
+
+    <div id="boxY">
+
+    </div>
+    <div>
+        <h3 class="conf-h">My text loren</h3>
+        <p class="paragraf">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ut dicta asperiores nisi. Aliquid accusamus unde magnam qui quibusdam, molestias magni blanditiis nesciunt nemo modi ipsa esse, iste natus dolorem.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sed veniam tenetur esse amet eius unde, culpa aliquam blanditiis, laudantium qui nam delectus, dolor voluptate quaerat. Ad accusamus quos dolore?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque laborum molestias est esse commodi earum cupiditate, tempore veniam distinctio expedita repudiandae repellendus eius ad corrupti! Eaque maiores adipisci cum iure!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio eaque dignissimos minus quis officiis error voluptatum consequuntur omnis enim soluta dolorum vero vitae tempore saepe, incidunt amet maxime illo tempora.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda hic molestiae minus quidem cum pariatur porro voluptates sit laboriosam, modi atque repellendus. Quod laudantium iusto quae sit, vel porro sequi.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus natus laboriosam illo a sed. Enim cumque unde dolore sit saepe eveniet quas, reprehenderit porro, molestiae iste aspernatur veniam doloribus! Ullam.
+        </p>
+    </div>
+    <dir>
+        <a href="https://web.whatsapp.com/" target="_blank"><img id="link-wpp" src="./2071331.png" alt=""></a>
+    </dir>
+   
+</body>
+</html>

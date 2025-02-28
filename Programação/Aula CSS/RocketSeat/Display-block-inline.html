@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        border: 2px solid red;
+        width: 150px; /*Block respeita a largura*/
+        height: 150px; /*Block respeita a altura*/
+        margin: 10%; /*Block respeita a margem*/
+        padding: 10px;
+    }
+    span{
+        border: 2px solid green;
+        width: 150px; /*Inline não respeita largura*/
+        height: 150px;/*Inline não respeita altura*/
+        margin: 10%; /*Inline só respeita margem na horizontal*/
+        padding: 10px;
+
+        /*O comando Display: block / inline, altera o comportamento das caixas*/
+    }
+</style>
+<body>
+    <div>Block</div>
+    <span>InLine</span>
+</body>
+</html>

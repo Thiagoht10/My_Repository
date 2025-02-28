@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root {
+        font-size: 18px; /*Elemento usado como referência pelo rem*/
+        background-color: rgb(44, 43, 43);
+        color: white;
+    }
+    div {
+        font-size: 20px; /*Elemento pai usado como referência pelo em*/
+    }
+    p {
+        font-size: 1em; /*Distância relativa ao objeto pai*/
+    }
+    #p2 {
+        font-size: 1.5rem; /*Distância relativa ao objeto root*/
+    }
+    #p3 {
+        font-size: 3vw; /*Distância relativa viewport width(largura)*/
+    }
+    #p4 {
+        font-size: 4vh; /*Distância relativa viewport height(altura)*/
+    }
+    
+</style>
+<body>
+    <div>
+        <p>Usando unidade de medida relativa em</p>
+        <p id="p2">Usando unidade de medida relativa rem</p>
+        <p id="p3">Usando unidade de medida relativa vw</p>
+        <p id="p4">Usando unidade de medida relativa vh</p>
+    </div>
+</body>
+</html>

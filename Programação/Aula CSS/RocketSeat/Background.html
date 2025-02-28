@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background-Repeat</title>
+</head>
+<style>
+    header{
+        height: 100px;
+        padding: 15px;
+        border: 2px dashed red;
+        background-color: rgb(65, 65, 65);
+        background-image: url(https://www.google.com.br/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png);
+        background-repeat: no-repeat; /*Não deixa a imagem se repetir*/
+        
+        background-position: right bottom; /*Posição da imagem*/
+        /* A primeira configuração se diz respeito a parte horizontal
+        A segunda se diz respeito a vertical*/
+        
+        background-size: contain; /*Tamanho da imagem/*
+        /*contain mantém a imagem dentro da caixa*/
+        /*cover cobre toda a caixa com a imagem*/
+        /*Ainda há valores de porcentagem, porém o primeiro valor se diz
+        respeito à horizontal e o segundo a vertical*/
+
+        background-origin: content-box; /*Origem do fundo*/
+        /*content-box é a partir do conteúdo da caixa*/
+        /*border-box é a partir da borda da caixa*/
+        /*padding-box é a partir do padding*/
+
+        background-clip: content-box; /*Altera tanto o fundo quanto a imagem*/
+        /*content-box mantém o fundo e a imagem apenas no conteúdo da caixa*/
+        /*padding-box altera o fundo e a imagem para ocupar o padding*/
+        /*border-box altera o fundo e a imagem para ocupar a partir da borda*/
+    }
+</style>
+<body>
+    <header>
+        
+    </header>
+    <div>
+        <h1>Evolua rápido com a tecnologia.</h1>
+        <p>Junte-se a milheres de DEVs e acelere na direção dos seus objetivos</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Sizing</title>
+</head>
+<style>
+    div{
+        width: 200px; /*Largura de um elemento*/
+        height: 200px; /*Altura de um elemento*/
+        border: 2px solid red; /*Borda de um elemento*/
+        margin: 10%; /*Margem de um elemento*/
+        padding: 0 20px; /*Espaço interno de um elemento*/
+        text-align: center; /*Alinhamento de texto*/
+        text-transform: uppercase; /*Transformação de texto*/
+        
+        box-sizing: border-box; /*Dimencionamento de caixa*/
+        /*Pode ser configurado para border-box ou content-box*/
+        /*border-box respeita o lavor de largura e altura*/
+        /*content-box soma ao elemento um padding por exemplo*/
+    }
+</style>
+<body>
+    <div>
+        <h1>CSS é incrivel</h1>
+    </div>
+</body>
+</html>

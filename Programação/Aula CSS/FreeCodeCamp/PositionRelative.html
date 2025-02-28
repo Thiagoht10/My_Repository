@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--O CSS trata cada elemento HTML como uma caixa. Esse conceito é geralmente referido como CSS Box Model. Elementos de nível de bloco são empilhados um em cima do outro (pense nas divs, parágrafos e títulos) enquanto os elementos de linha são inseridos um lado do outro (como imagens ou spans). Essa é a organização padrão dos elementos no CSS e é chamada de normal flow (fluxo normal). Mas o CSS também oferece uma propriedade para posicionar os elementos de forma manual.
+  
+  Ao definir a posição de um elemento para relative, o CSS permite que você mova o elemento relativamente à sua posição atual. Ela trabalha em conjunto com as propriedades de deslocamento do CSS left (esquerda) ou right (direita) e top (superior) ou bottom (inferior). Estas propriedades definem quantos pixels, porcentagens ou ems deslocar o elemento para longe de onde ele inicialmente foi posicionado. 
+
+Alterar a posição de um elemento para relativo não o remove do fluxo normal - outros elementos em torno dele ainda se comportam como se o item estivesse em sua posição padrão.-->
+  
+  <style>
+    h2 {
+      position: relative; /*Propriedade Css sendo usada aqui!*/
+      top: 15px; /*Movendo o item em relação ao topo*/
+      /*Existe ainda o right, left e o bottom como parâmetros dessa propriedade*/
+  
+    }
+  </style>
+  <body>
+    <h1>On Being Well-Positioned</h1>
+    <h2>Move me!</h2>
+    <p>I still think the h2 is where it normally sits.</p>
+  </body>
+</body>
+</html>

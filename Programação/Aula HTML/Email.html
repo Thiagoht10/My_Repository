@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="a" action="">
+        <input type="email"
+        multiple> <!--Permite colocar mais de um email separados por vírgulas-->
+        <button form="a">Enviar</button>
+    </form>
+
+    <form id="b" action="">
+        <input type="email"
+        pattern=".+@gmail\.com"> <!--Restringe o email que será digitado-->
+        <button form="b">Enviar</button>
+    </form>
+
+    <form id="c" action="">
+        <datalist id="sug-email">
+            <option>thiagodesouzaht@gmail.com</option>
+        </datalist>
+        <input type="email"
+        list="sug-email"> <!--Sugere um email para colocar-->
+        <button form="c">Enviar</button>
+    </form>
+</body>
+</html>

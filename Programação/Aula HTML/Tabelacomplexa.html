@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Thiago Souza">
+    <title>Tabela Complexa</title>
+</head>
+<body>
+    <table>
+        <caption>Produtos x Vendidor por loja</caption> <!--Título da tabela-->
+        
+        <colgroup> <!--Grupo de colunas--> <!--Pode ser usado para editar colunas-->
+            <col>
+            <col span="2" style="background-color: red"> <!--Período ou espaço que a coluna terá-->
+            <col span="2" style="background-color: green;">
+        </colgroup>
+        
+        <thead> <!--Marcador de cabeçalho da coluna-->
+            <tr> <!--Cria coluna em linha-->
+                <th rowspan="2"></th> <!--rowspan é o espaço/período que a linha terá-->
+                <th colspan="2" scope="colgroup">Afonso Pena</th>
+                <th colspan="2" scope="colgroup">Antônia Pereira</th>
+            </tr>
+
+            <tr>
+                <th scope="col">Produzidos</th> <!--col quer dizer coluna-->
+                <th scope="col">Vendidos</th> <!--TH é usado para dar título a coluna-->
+                <th scope="col">Produzidos</th> <!--TH deve estar sempre dentro da tag TR-->
+                <th scope="col">Vendidos</th>
+            </tr>
+        </thead>
+        <tbody> <!--Marcador de conteúdo da tabela-->
+            <tr>
+                <th scope="row">Vassouras</th> <!--row é linha-->
+                <td>50</td>
+                <td>30</td>
+                <td>20</td> <!--TD é usado para definir o conteúdo da tabela-->
+                <td>20</td>
+            </tr>
+            <tr>
+                <th scope="row">Baldes</th> <!--SCOPE é uma acessibilidade para o leitor de tela, por exemplo-->
+                <td>10</td>
+                <td>10</td>
+                <td>30</td>
+                <td>25</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

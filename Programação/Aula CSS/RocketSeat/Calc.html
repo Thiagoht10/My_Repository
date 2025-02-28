@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função Calc</title>
+</head>
+<style>
+    body{
+        height: 100vh; /*Altura da viewport height (altura da tela)*/
+    }
+    .box{
+        height: calc(50% - 50px); /*calc calcula automaticamente*/
+        width: 400px; /*Largura de um objeto*/
+        background-image: url('https://source.unsplash.com/random');
+        background-repeat: no-repeat; /*Não repete a imagem*/
+        background-position: center; /*Altera a posição do background*/
+        /*position recebe valores*/
+    }
+</style>
+<body>
+    <div class="box"></div>
+</body>
+</html>

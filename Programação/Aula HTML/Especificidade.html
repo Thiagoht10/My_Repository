@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especificidade e cascata</title>
+</head>
+<style>
+    * {
+        background-color: gray; /*Esse seletor universal possui valor 0*/
+        color: green;
+    }
+    h1 {
+        color: black; /*Esse elemento possui valor 1*/
+    }
+    .mycolor {
+        color: orange; /*Essa classe possui valor 10*/
+    }
+    .mycolor1 {
+        color: orange !important; /*Important sobrescreve toda a cascata*/
+    }
+    #mycolor {
+        color: brown; /*Esse ID possui valor 100*/
+    }
+</style>
+<body>
+    <h1 class="mycolor" id="mycolor" style="color: blueviolet;">Especificidade dos elementos</h1>
+    <p class="mycolor1" style="color: blue;">Ou seja, a força no css que cada elemento possui.</p>
+    <!--Inline possui valor 1000, o mais alto valor-->
+    <!--O important subscreve todos os outras formas de estilizar um elemento-->
+</body>
+</html>

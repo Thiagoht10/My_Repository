@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+    .box1{
+        background-color: red;
+        position: relative; /*Quando está em relative me dá 5 opções de 
+        posicionamento*/
+        left: 180px; /*Empurra da esquerda para direita*/
+        top: 180px; /*Empurra de cima para baixo*/
+    }
+    .box2 {
+        background-color: blue;
+        position: absolute; /*Posiciona relativamente à página*/
+        top: 0px;
+        left: 180px;
+    }
+    .box3 {
+        background-color: green;
+        position: fixed;
+        top: 20px;
+    }
+</style>
+<body>
+    <div class="box1 box"></div>
+    <div class="box2 box"></div>
+    <div class="box3 box"></div>
+</body>
+</html>

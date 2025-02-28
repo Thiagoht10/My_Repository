@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 150px;
+        height: 150px;
+        margin: 7%;
+        text-align: center;
+        box-sizing: border-box; /*Qualquer alteração não aumenta o tamanho da caixa*/
+        border-top: 8px solid green;
+        border-right: 8px solid red;
+        border-bottom: 8px solid blue;
+        border-left: 8px solid yellow;
+        /*As bordas alteram a a caixa, a não ser que use o box-sizing*/
+
+        outline: solid 3px black;
+        /*outline cria um contorno e não pode ter ajustes individuais*/
+    }
+</style>
+<body>
+    <div>Caixa</div>
+</body>
+</html>

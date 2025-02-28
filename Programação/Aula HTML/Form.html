@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action=""> <!--Tag para criar formulário--> <!--Action é para onde
+    será enviado o formulário-->
+        <fieldset form="contato"> <!--Agrupamento de campos-->
+            <legend>Contato</legend> <!--Nome desse agrupamento-->
+            <label for="email">Email
+                <input id="email" type="text" value="email@email.com"> <!--Usado para inserir algum dado-->
+            </label> <!--Usado para acessibiliadde e para associar tags de
+            entrada de dados-->
+            <!--O for é usado pra identificar uma input que estaja fora do
+            label pelo id-->
+            
+            <button type="submit" name="Reset" disabled autofocus value="Qualquer" name="Botão email" form="email">Enviar</button>
+            <!--Type:Tipo de botão
+            Name: nome
+            value: Valor. Nesse caso quando se recebe o formulário
+            disabled: desablita o botão
+            Form: associa ao formulário através do ID
+            Autofocus: a página procura e direciona até o elemento-->
+            
+        </fieldset>
+    </form>
+</body>
+</html>
