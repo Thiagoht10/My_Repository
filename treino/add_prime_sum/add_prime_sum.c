@@ -82,12 +82,7 @@ int	add_prime_sum(int num)
 
 int	main(int argc, char **argv)
 {
-	if (argc != 2)
-	{
-		write(1, "0\n", 2);
-		return (0);
-	}
-	if (ft_atoi(argv[1]) < 2)
+	if (argc != 2 || ft_atoi(argv[1]) < 2)
 	{
 		write(1, "0\n", 2);
 		return (0);
