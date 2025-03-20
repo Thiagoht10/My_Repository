@@ -1,0 +1,1 @@
+ls -A -p -m --indicator-style=slash --time=ctime
