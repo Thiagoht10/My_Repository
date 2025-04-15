@@ -1,52 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 21:20:26 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/15 19:42:40 by thde-sou         ###   ########.fr       */
+/*   Created: 2025/04/14 19:00:36 by thde-sou          #+#    #+#             */
+/*   Updated: 2025/04/14 20:05:02 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	long unsigned int	a;
-	unsigned char		uc;
+	int				a;
+	char			*str;
+	unsigned char	uc;
 
-	uc = (unsigned char) c;
+	uc = c;
 	a = 0;
-	while (a < n)
+	str = (char *)s;
+	while (str[a] != '\0')
 	{
-		((unsigned char *)s)[a] = uc;
+		if (str[a] == uc)
+			return (&str[a]);
 		a++;
 	}
-	return (s);
+	if (uc == '\0')
+		return (&str[a]);
+	return (NULL);
 }
 
 /*int	main(void)
 {
-	int	a;
-	char	str1[10] = "abcdefghi";
-	char    str2[10] = "abcdefghi";
+	char	str[] = "abcdef";
+	char	*prt1;
+	char	*prt2;
+	char	letra = 'f';
 
-	a = 0;
-	ft_memset(str1, 'a', 3);
-	memset(str2, 'a', 3);
-	while (a < 10)
-	{
-		printf("%d ", str1[a]);
-		a++;
-	}
-	a = 0;
-	printf("\n");
-	while (a < 10)
-	{
-		printf("%d ", str2[a]);
-		a++;
-	}       
+	prt1 = strchr(str, letra);
+	prt2 = ft_strchr(str, letra);
+
+	printf("%s vs %s", prt1, prt2);
 	return (0);
 }*/
