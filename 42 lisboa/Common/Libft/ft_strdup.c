@@ -1,46 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 16:07:28 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/20 19:04:04 by thde-sou         ###   ########.fr       */
+/*   Created: 2025/04/20 18:57:18 by thde-sou          #+#    #+#             */
+/*   Updated: 2025/04/20 19:09:27 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strdup(const char *s)
 {
-	int	sign;
-	int	res;
 	int	a;
+	char	*nova = malloc(ft_strlen(s) + 1);
 
-	sign = 1;
-	res = 0;
+	if (nova == NULL)
+		return (NULL);
 	a = 0;
-	while ((nptr[a] >= 9 && nptr[a] <= 13) || nptr[a] == 32)
-		a++;
-	if (nptr[a] == '+' || nptr[a] == '-')
+	while(s[a] != '\0')
 	{
-		if (nptr[a] == '-')
-			sign *= -1;
+		nova[a] = s[a];
 		a++;
 	}
-	while (nptr[a] >= '0' && nptr[a] <= '9')
-	{
-		res = res * 10 + (nptr[a] - '0');
-		a++;
-	}
-	return (res * sign);
+	nova[a] = '\0';
+	return (nova);
 }
 
-/*int     main(void)
+/*int	main(void)
 {
-        char    *str = " +123b6";
+	char	*string;
+	char	*c;
 
-        printf("%d vs %d", atoi(str), ft_atoi(str));
-        return (0);
+	string = "abcd";
+	c = ft_strdup(string);
+	printf("%s\n", c);
+	return (0);
 }*/
