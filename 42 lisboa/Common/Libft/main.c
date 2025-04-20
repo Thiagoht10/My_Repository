@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:25:03 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/15 20:18:08 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/20 16:55:43 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,8 @@
 
 int	main(void)
 {
-	int	a;
-	char	str1[10] = "123456789";
-	char    str2[10] = "123456789";
+	char	*str = " -12@3";
 
-	bzero(str1, 4);
-	ft_bzero(str2, 4);
-	a = 0;
-	while (a < 10)
-	{
-		printf("%d ", str1[a]);
-		a++;
-	}
-	a = 0;
-	printf("\n");
-	while (a < 10)
-        {
-                printf("%d ", str2[a]);
-                a++;
-        }
+	printf("%d vs %d", atoi(str), ft_atoi(str));
 	return (0);
 }
