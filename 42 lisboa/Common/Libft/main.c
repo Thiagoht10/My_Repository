@@ -6,22 +6,30 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:25:03 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/20 19:06:01 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/21 00:10:13 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int   main(void)
+int     main(void)
 {
-        char    *string;
-        char    *c;
-	char	*d;
+        int     a = 0;
+        int     z = 5;
+        char     *arr = ft_calloc(z, 0);
+        char     *arr2 = calloc(z, 0);
 
-        string = "abcd";
-        c = ft_strdup(string);
-	d = strdup(string);
-        printf("%s vs %s\n", c, d);
+        while (a < z)
+        {
+                printf("%d", arr[a]);
+                a++;
+        }
+        printf("\n");
+        a = 0;
+        while (a < z)
+        {
+                printf("%d", arr2[a]);
+                a++;
+        }
         return (0);
 }
-

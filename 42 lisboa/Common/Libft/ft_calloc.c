@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 18:28:41 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/20 19:00:09 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/21 00:15:13 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@ void	*ft_calloc(size_t nmenb, size_t size)
 	void	*arr;
 	size_t	bytes;
 
+	if (nmenb == 0 && size == 0)
+		return(malloc(1));
+	if (SIZE_MAX / size < nmenb)
+                return (NULL);
 	bytes = nmenb * size;
-	arr = malloc(bytes);
+        arr = malloc(bytes);
 	if (arr != NULL)
 		ft_memset(arr, 0, bytes);
-	if (arr == NULL)
+	else
 		return (NULL);
 	return (arr);
 }
