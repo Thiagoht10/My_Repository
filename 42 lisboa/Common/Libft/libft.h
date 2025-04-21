@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 18:23:38 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/20 19:16:06 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/21 16:33:42 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdint.h>
 
 int		ft_isprint(int c);
 int		ft_isdigit(int c);
