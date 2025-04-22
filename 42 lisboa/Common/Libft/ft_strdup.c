@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 18:57:18 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/20 19:09:27 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/22 21:06:36 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 char	*ft_strdup(const char *s)
 {
-	int	a;
-	char	*nova = malloc(ft_strlen(s) + 1);
+	int		a;
+	char	*nova;
 
+	nova = malloc(ft_strlen(s) + 1);
 	if (nova == NULL)
 		return (NULL);
 	a = 0;
-	while(s[a] != '\0')
+	while (s[a] != '\0')
 	{
 		nova[a] = s[a];
 		a++;

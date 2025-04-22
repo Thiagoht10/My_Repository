@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 18:33:52 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/19 20:15:06 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/21 20:19:43 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	a;
 	size_t	b;
 
+	if (*little == '\0')
+		return ((char *)big);
 	a = 0;
 	while (big[a] != '\0' && a < len)
 	{
@@ -30,3 +32,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
+
+/*int   main(void)
+{
+        char    str[] = "ola, bom boem dia";
+        char    str1[] = "boe";
+        int     a = 11;
+
+        printf("%s", ft_strnstr(str, str1, a));
+        return (0);
+}*/

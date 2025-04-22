@@ -6,30 +6,27 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:25:03 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/21 16:31:38 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/22 22:32:17 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 int     main(void)
 {
-        int     a = 0;
-        int     z = 5;
-        char     *arr = ft_calloc(z, sizeof(int));
-        char     *arr2 = calloc(z, sizeof(int));
+	size_t	a = 0;
+	char	*s1 = "abc";
+	char	*s2 = "DEFF";
+	char	*res;
 
-        while (a < z)
-        {
-                printf("%d", arr[a]);
-                a++;
-        }
-        printf("\n");
-        a = 0;
-        while (a < z)
-        {
-                printf("%d", arr2[a]);
-                a++;
-        }
+	res = ft_strjoin(s1, s2);
+	printf("Tamanho res: %zu\n", ft_strlen(res));
+	while (a < ft_strlen(res) + 1)
+	{
+		printf("%d ", res[a]);
+		a++;
+	}
         return (0);
 }
+

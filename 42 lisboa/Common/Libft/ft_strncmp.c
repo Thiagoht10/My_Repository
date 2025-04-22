@@ -1,47 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 20:09:52 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/21 19:29:27 by thde-sou         ###   ########.fr       */
+/*   Created: 2025/04/15 20:26:38 by thde-sou          #+#    #+#             */
+/*   Updated: 2025/04/18 19:27:12 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int				a;
-	char			*str;
-	unsigned char	uc;
+	size_t	a;
 
-	uc = c;
-	str = (char *)s;
-	a = ft_strlen(str);
-	while (a >= 0)
+	a = 0;
+	while (a < n)
 	{
-		if (str[a] == uc)
-			return (&str[a]);
-		a--;
+		if (s1[a] != s2[a])
+			return (s1[a] - s2[a]);
+		if (s1[a] == '\0' && s2[a] == '\0')
+			return (0);
+		a++;
 	}
-	if (uc == '\0')
-		return (&str[a]);
-	return (NULL);
+	return (0);
 }
 
-/*int	main(void)
+/*int     main(void)
 {
-	char	str[] = "abecbdef";
-	char	*prt1;
-	char	*prt2;
-	char	letra = 'j';
+        char    *str1 = "banna";
+        char    *str2 = "baNa";
+        int     b = 2;
 
-	prt1 = strrchr(str, letra);
-	prt2 = ft_strrchr(str, letra);
-
-	printf("%s vs %s", prt1, prt2);
-	return (0);
+        printf("%d vs %d", strncmp(str1, str2, b), ft_strncmp(str1, str2, b));
+        return (0);
 }*/
