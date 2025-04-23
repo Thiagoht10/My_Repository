@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:25:03 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/22 22:32:17 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/23 20:50:02 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 
 int     main(void)
 {
-	size_t	a = 0;
-	char	*s1 = "abc";
-	char	*s2 = "DEFF";
+	const char	*str = "*/hello";
+	const char	*set = "*/";
 	char	*res;
+	size_t	a = 0;
 
-	res = ft_strjoin(s1, s2);
-	printf("Tamanho res: %zu\n", ft_strlen(res));
+	res = ft_strtrim (str, set);
 	while (a < ft_strlen(res) + 1)
 	{
-		printf("%d ", res[a]);
+		printf("%c ", res[a]);
 		a++;
 	}
+	printf("\ntamanho de res: %zu", ft_strlen(res));
         return (0);
 }
 
