@@ -6,7 +6,7 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 18:08:12 by thde-sou          #+#    #+#              #
-#    Updated: 2025/04/25 23:05:19 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/04/26 18:49:12 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,24 +17,38 @@ NAME = libft.a
 
 EXEC = ./a.out
 
-SRC = $(wildcard *.c)
+SRC = ft_atoi.c     ft_isprint.c  ft_putchar_fd.c  ft_striteri.c  ft_strnstr.c \
+ft_bzero.c    ft_itoa.c     ft_putendl_fd.c  ft_strjoin.c   ft_strrchr.c \
+ft_calloc.c   ft_memchr.c   ft_putnbr_fd.c   ft_strlcat.c   ft_strtrim.c \
+ft_isalnum.c  ft_memcmp.c   ft_putstr_fd.c   ft_strlcpy.c   ft_substr.c \
+ft_isalpha.c  ft_memcpy.c   ft_split.c       ft_strlen.c    ft_tolower.c \
+ft_isascii.c  ft_memmove.c  ft_strchr.c      ft_strmapi.c   ft_toupper.c \
+ft_isdigit.c  ft_memset.c   ft_strdup.c      ft_strncmp.c  main.c 
+
+SRC_BONUS = $(wildcard *_bonus.c)
 
 OBJ = $(SRC:.c=.o)
+
+OBJ_BONUS = $(SRC_BONUS:_bonus.c=_bonus.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+bonus: $(OBJ) $(OBJ_BONUS)
+	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-run:
+run: $(NAME)
 	$(CC) main.c $(NAME)
 	$(EXEC)
 
 clean:
 	rm -f $(OBJ)
+	rm -f $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)

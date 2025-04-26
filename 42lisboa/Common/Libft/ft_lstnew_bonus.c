@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 18:25:03 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/26 20:42:27 by thde-sou         ###   ########.fr       */
+/*   Created: 2025/04/26 18:55:46 by thde-sou          #+#    #+#             */
+/*   Updated: 2025/04/26 19:57:10 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-int     main(void)
+t_list	*ft_lstnew(void *content)
 {
-	t_list	*lista = NULL;
-	t_list	*n1;
-	t_list	*n2;
+	t_list	*node;
 
-	n1 = ft_lstnew("Nó 1");
-	n2 = ft_lstnew("Nó 2");
-	ft_lstadd_front(&lista, n1);
-	ft_lstadd_front(&lista, n2);
-	t_list	*temp = lista;
-	ft_lstsize(temp);
-	printf("Tamanho da lista: %d\n", ft_lstsize(temp));
-	return (0);
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
+
+/*int     main(void)
+{        
+        t_list  *nodo;
+        int     valor = 42;
+        nodo = ft_lstnew(&valor);
+        if (nodo)
+                printf("conteudo do nó: %d\n", *(int *)(nodo->content));
+        return (0);
+}*/
