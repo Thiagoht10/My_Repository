@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 20:35:26 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/18 21:22:13 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/26 07:23:09 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char			*u_dest;
 	const unsigned char		*u_src;
 
+	if (!dest && !src && n > 0)
+		return (NULL);
 	u_dest = (unsigned char *) dest;
 	u_src = (const unsigned char *) src;
 	a = 0;

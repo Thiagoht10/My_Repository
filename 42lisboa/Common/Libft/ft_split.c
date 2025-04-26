@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 05:01:11 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/26 06:40:12 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/26 08:10:18 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 int	count_words(const char *str, char c)
 {
 	size_t	a;
-	size_t	count;
+	int		count;
 
+	if (!str)
+		return (0);
 	a = 0;
 	count = 0;
 	while (str[a] != '\0')
@@ -74,6 +76,8 @@ char	**ft_split(char const *s, char c)
 	size_t	count;
 	size_t	a;
 
+	if (!s)
+		return (NULL);
 	count = count_words(s, c);
 	arr = malloc((count + 1) * sizeof(char *));
 	if (!arr)
@@ -81,7 +85,7 @@ char	**ft_split(char const *s, char c)
 	if (!make_split(s, arr, c))
 	{
 		a = 0;
-		while (a < count)
+		while (arr[a])
 		{
 			if (arr[a])
 				free(arr[a]);
