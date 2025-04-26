@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 05:01:11 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/24 21:58:48 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/26 06:40:12 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,6 @@ int	count_words(const char *str, char c)
 	return (count);
 }
 
-char	*cpy_str(const char *s, size_t start, size_t len)
-{
-	char	*word;
-
-	word = malloc(len + 1);
-	if (!word)
-		return (NULL);
-	ft_memcpy(word, s + start, len);
-	word[len] = '\0';
-	return (word);
-}
-
 int	count_str(char const *s, char c, int start)
 {
 	int	a;
@@ -54,18 +42,12 @@ int	count_str(char const *s, char c, int start)
 	return (a - start);
 }
 
-char	**ft_split(char const *s, char c)
+int	make_split(char const *s, char **arr, char c)
 {
-	char	**arr;
-	int		count;
 	size_t	a;
 	size_t	b;
 	size_t	len;
 
-	count = count_words(s, c) + 1;
-	arr = malloc(count * sizeof(char *));
-	if (!arr)
-		return (NULL);
 	a = 0;
 	b = 0;
 	while (s[a] != '\0')
@@ -73,19 +55,48 @@ char	**ft_split(char const *s, char c)
 		if ((a == 0 || s[a - 1] == c) && s[a] != c)
 		{
 			len = count_str(s, c, a);
-			arr[b++] = cpy_str(s, a, len);
+			arr[b] = ft_substr(s, a, len);
+			if (!arr[b])
+				return (0);
+			b++;
 			a += len;
 		}
 		else
 			a++;
 	}
 	arr[b] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**arr;
+	size_t	count;
+	size_t	a;
+
+	count = count_words(s, c);
+	arr = malloc((count + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
+	if (!make_split(s, arr, c))
+	{
+		a = 0;
+		while (a < count)
+		{
+			if (arr[a])
+				free(arr[a]);
+			a++;
+		}
+		free(arr);
+		return (NULL);
+	}
 	return (arr);
 }
 
 /*int     main(void)
 {
         int     a;
+        int     b;
         char    *str = "aaaacbbbcddd";
         char    c = 'c';
         char    **arr = ft_split(str, c);
@@ -96,6 +107,9 @@ char	**ft_split(char const *s, char c)
                 printf("%s ", arr[a]);
                 a++;
         }
+        b = 0;
+        while (arr[a])
+                free(arr[b++]);
         free(arr);
         return (0);
 }*/

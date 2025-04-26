@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 18:25:03 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/26 06:43:10 by thde-sou         ###   ########.fr       */
+/*   Created: 2025/04/26 01:03:07 by thde-sou          #+#    #+#             */
+/*   Updated: 2025/04/26 03:33:54 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-int     main(void)
+void	ft_putnbr_fd(int n, int fd)
 {
-        int     a;
-	int	b;
-        char    *str = " Ola mundo!";
-        char    c = ' ';
-        char    **arr = ft_split(str, c);
+	long int	nb;
 
-        a = 0;
-        while (arr[a] != NULL)
-        {
-                printf("%s ", arr[a]);
-                a++;
-        }
-	b = 0;
-	while (arr[a])
-		free(arr[b++]);
-        free(arr);
-        return (0);
+	nb = (long int)n;
+	if (nb < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nb *= -1;
+	}
+	if (nb >= 10)
+		ft_putnbr_fd(nb / 10, fd);
+	ft_putchar_fd((nb % 10) + '0', fd);
 }
+
+/*int     main(void)
+{
+        int     num = 2080;
+        int     fd = 1;
+
+        ft_putnbr_fd(num, fd);
+        return (0);
+}*/
