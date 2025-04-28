@@ -6,7 +6,7 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 18:08:12 by thde-sou          #+#    #+#              #
-#    Updated: 2025/04/26 18:49:12 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/04/28 08:44:28 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ CC = cc
 FLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
+
+MAIN = main.c
 
 EXEC = ./a.out
 
@@ -25,7 +27,9 @@ ft_isalpha.c  ft_memcpy.c   ft_split.c       ft_strlen.c    ft_tolower.c \
 ft_isascii.c  ft_memmove.c  ft_strchr.c      ft_strmapi.c   ft_toupper.c \
 ft_isdigit.c  ft_memset.c   ft_strdup.c      ft_strncmp.c  main.c 
 
-SRC_BONUS = $(wildcard *_bonus.c)
+SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -42,8 +46,8 @@ bonus: $(OBJ) $(OBJ_BONUS)
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-run: $(NAME)
-	$(CC) main.c $(NAME)
+run: $(NAME) $(MAIN)
+	$(CC) $(MAIN) $(NAME)
 	$(EXEC)
 
 clean:
