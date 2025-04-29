@@ -6,7 +6,7 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 18:08:12 by thde-sou          #+#    #+#              #
-#    Updated: 2025/04/28 08:44:28 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/04/29 13:38:33 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = libft.a
 
 MAIN = main.c
 
-EXEC = ./a.out
+EXEC = a.out
 
 SRC = ft_atoi.c     ft_isprint.c  ft_putchar_fd.c  ft_striteri.c  ft_strnstr.c \
 ft_bzero.c    ft_itoa.c     ft_putendl_fd.c  ft_strjoin.c   ft_strrchr.c \
@@ -25,7 +25,7 @@ ft_calloc.c   ft_memchr.c   ft_putnbr_fd.c   ft_strlcat.c   ft_strtrim.c \
 ft_isalnum.c  ft_memcmp.c   ft_putstr_fd.c   ft_strlcpy.c   ft_substr.c \
 ft_isalpha.c  ft_memcpy.c   ft_split.c       ft_strlen.c    ft_tolower.c \
 ft_isascii.c  ft_memmove.c  ft_strchr.c      ft_strmapi.c   ft_toupper.c \
-ft_isdigit.c  ft_memset.c   ft_strdup.c      ft_strncmp.c  main.c 
+ft_isdigit.c  ft_memset.c   ft_strdup.c      ft_strncmp.c
 
 SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
@@ -40,7 +40,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(OBJ_BONUS)
+bonus: $(OBJ) $(OBJ_BONUS) $(NAME)
 	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
 
 %.o: %.c
@@ -48,14 +48,15 @@ bonus: $(OBJ) $(OBJ_BONUS)
 
 run: $(NAME) $(MAIN)
 	$(CC) $(MAIN) $(NAME)
-	$(EXEC)
+	./$(EXEC)
 
 clean:
 	rm -f $(OBJ)
 	rm -f $(OBJ_BONUS)
 
 fclean: clean
-	rm -f $(NAME)
-	rm -f $(EXEC)
+	rm -f $(NAME) $(EXEC)
 
 re: fclean all
+
+.PHONY: all bonus clean fclean re run
