@@ -6,13 +6,13 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 04:17:35 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/24 00:07:32 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/30 11:14:40 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	beginning(char const *str, char const *prt)
+static int	beginning(char const *str, char const *prt)
 {
 	size_t	a;
 	size_t	b;
@@ -40,7 +40,7 @@ int	beginning(char const *str, char const *prt)
 	return (found);
 }
 
-int	end(char const *str, char const *prt)
+static int	end(char const *str, char const *prt)
 {
 	int		a;
 	size_t	b;

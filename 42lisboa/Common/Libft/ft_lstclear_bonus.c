@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:19:59 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/27 21:46:22 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/30 16:06:54 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
+
+/*void    del(void *content)
+{
+        free(content);
+}*/
 
 /*void    del(void *content);
 

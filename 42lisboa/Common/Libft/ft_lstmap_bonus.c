@@ -6,29 +6,11 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 23:25:53 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/28 01:41:39 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/30 16:32:10 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*f_lst(void *content)
-{
-	int		a;
-	char	*str;
-
-	str = ft_strdup((char *)content);
-	if (!str)
-		return (NULL);
-	a = 0;
-	while (str[a] != '\0')
-	{
-		if (str[a] >= 'a' && str[a] <= 'z')
-			str[a] -= 32;
-		a++;
-	}
-	return ((void *)str);
-}
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -53,7 +35,30 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (new_lst);
 }
 
-/*void    *f_lst(void *content);
+/*void    *upper_lst(void *content)
+{
+        int             a;
+        char    *str;
+
+        str = ft_strdup((char *)content);
+        if (!str)
+                return (NULL);
+        a = 0;
+        while (str[a] != '\0')
+        {
+                if (str[a] >= 'a' && str[a] <= 'z')
+                        str[a] -= 32;
+                a++;
+        }
+        return ((void *)str);
+}
+
+void    del(void *content)
+{
+        free(content);
+}*/
+
+/*void    *upper_lst(void *content);
 void    del(void *content);
 
 int     main(void)

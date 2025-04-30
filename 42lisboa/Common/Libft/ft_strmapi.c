@@ -6,19 +6,11 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 21:42:47 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/25 22:55:27 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/30 15:56:54 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	to_upper(unsigned int c, char s)
-{
-	(void)c;
-	if (s >= 'a' && s <= 'z')
-		return (s - 32);
-	return (s);
-}
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -41,6 +33,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new_str[a] = '\0';
 	return (new_str);
 }
+
+/*char    to_upper(unsigned int c, char s)
+{
+        (void)c;
+        if (s >= 'a' && s <= 'z')
+                return (s - 32);
+        return (s);
+}*/
 
 /*char    to_upper(unsigned int c, char s);
 

@@ -6,13 +6,13 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 22:04:59 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/24 23:47:23 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/30 10:36:13 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_dig(long int num)
+static int	count_dig(long int num)
 {
 	int	a;
 
@@ -25,7 +25,7 @@ int	count_dig(long int num)
 	return (a);
 }
 
-char	*convertion(long int num, int len, int n)
+static char	*convertion(long int num, int len, int n)
 {
 	char	*result;
 	int		a;
@@ -52,7 +52,7 @@ char	*convertion(long int num, int len, int n)
 	return (result);
 }
 
-char	*if_zero(void)
+static char	*if_zero(void)
 {
 	char	*str;
 

@@ -6,26 +6,11 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 22:16:39 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/27 23:12:24 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/04/30 16:14:40 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	lst_f(void *content)
-{
-	int		a;
-	char	*str;
-
-	a = 0;
-	str = (char *)content;
-	while (str[a] != '\0')
-	{
-		if (str[a] >= 'a' && str[a] <= 'z')
-			str[a] -= 32;
-		a++;
-	}
-}
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
@@ -37,6 +22,21 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
+
+/*void    lst_f(void *content)
+{
+        int             a;
+        char    *str;
+
+        a = 0;
+        str = (char *)content;
+        while (str[a] != '\0')
+        {
+                if (str[a] >= 'a' && str[a] <= 'z')
+                        str[a] -= 32;
+                a++;
+        }
+}*/
 
 /*void    lst_f(void *content);
 
