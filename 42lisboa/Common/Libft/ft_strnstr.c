@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 18:33:52 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/21 20:19:43 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/01 20:11:25 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			b++;
 		if (little[b] == '\0')
 			return ((char *)&big[a]);
-		if (big[a] != '\0')
-			a++;
+		a++;
 	}
 	return (NULL);
 }

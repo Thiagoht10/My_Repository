@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:18:47 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/19 17:19:18 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/01 16:42:29 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 /*int     main(void)
 {
-        char    str[] = "banana";
+	char    str[] = "banana";
         char    str1[10];
-        char    str2[10];
-        int     z = 4;
+        int     z = 6;
 
-        printf("%d vs %ld", strlcpy(str1, str, z), ft_strlcpy(str2, str, z));
-        printf("%s vs %s", str1, str2);
+        size_t  res = ft_strlcpy(str1, str, z);
+        printf("%s\n", str1);
+        printf("%zu\n", res);
         return (0);
 }*/

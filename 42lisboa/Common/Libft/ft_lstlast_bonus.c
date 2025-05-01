@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 18:26:53 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/27 19:21:29 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/01 20:16:37 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ t_list	*ft_lstlast(t_list *lst)
         t_list  *n2;
         t_list  *n3;
 
-        n1 = ft_lstnew("Nó 1");
+        n1 = ft_lstnew("Nó 3");
         n2 = ft_lstnew("Nó 2");
-        n3 = ft_lstnew("Nó 3");
+        n3 = ft_lstnew("Nó 1");
         ft_lstadd_front(&lista, n1);
         ft_lstadd_front(&lista, n2);
         ft_lstadd_front(&lista, n3);
