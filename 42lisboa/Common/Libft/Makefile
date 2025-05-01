@@ -6,7 +6,7 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 18:08:12 by thde-sou          #+#    #+#              #
-#    Updated: 2025/04/29 13:38:33 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/05/01 12:14:38 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,13 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
+MARKER = .lib_bonus_created
+
 MAIN = main.c
 
 EXEC = a.out
 
-SRC = ft_atoi.c     ft_isprint.c  ft_putchar_fd.c  ft_striteri.c  ft_strnstr.c \
+SRC = ft_atoi.c ft_isprint.c  ft_putchar_fd.c  ft_striteri.c  ft_strnstr.c \
 ft_bzero.c    ft_itoa.c     ft_putendl_fd.c  ft_strjoin.c   ft_strrchr.c \
 ft_calloc.c   ft_memchr.c   ft_putnbr_fd.c   ft_strlcat.c   ft_strtrim.c \
 ft_isalnum.c  ft_memcmp.c   ft_putstr_fd.c   ft_strlcpy.c   ft_substr.c \
@@ -40,8 +42,11 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(OBJ_BONUS) $(NAME)
+bonus: $(OBJ) $(OBJ_BONUS) $(MARKER)
+
+$(MARKER) : $(OBJ) $(OBJ_BONUS)
 	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+	touch $(MARKER)
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
@@ -51,11 +56,11 @@ run: $(NAME) $(MAIN)
 	./$(EXEC)
 
 clean:
-	rm -f $(OBJ)
-	rm -f $(OBJ_BONUS)
+	rm -f $(OBJ) $(OBJ_BONUS) $(MARKER)
+	rm -f $(EXEC)
 
 fclean: clean
-	rm -f $(NAME) $(EXEC)
+	rm -f $(NAME)
 
 re: fclean all
 
