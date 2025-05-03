@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 15:17:35 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/26 07:28:34 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/02 17:24:14 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*u_dest;
 	const unsigned char	*u_src;
 
-	if (!dest && !src && n > 0)
-		return (NULL);
 	u_dest = (unsigned char *) dest;
 	u_src = (const unsigned char *) src;
 	a = 0;
