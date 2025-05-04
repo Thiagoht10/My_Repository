@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 01:03:07 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/26 03:33:54 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/04 17:04:51 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long int	nb;
 
+	if (fd < 0)
+		return ;
 	nb = (long int)n;
 	if (nb < 0)
 	{
