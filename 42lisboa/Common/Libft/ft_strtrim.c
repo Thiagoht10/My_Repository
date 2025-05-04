@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 04:17:35 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/30 11:14:40 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/04 12:26:48 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (idx1 > idx2)
 		return (ft_strdup(""));
 	len = idx2 - idx1 + 1;
+	if (len <= (size_t)(idx2 - idx1))
+		return (NULL);
 	str = malloc(len);
 	if (!str)
 		return (NULL);

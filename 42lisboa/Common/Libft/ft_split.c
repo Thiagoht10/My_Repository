@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 05:01:11 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/30 10:58:25 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/04 12:59:52 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,10 @@ static int	make_split(char const *s, char **arr, char c)
 			len = count_str(s, c, a);
 			arr[b] = ft_substr(s, a, len);
 			if (!arr[b])
+			{
+				arr[b] = NULL;
 				return (0);
+			}
 			b++;
 			a += len;
 		}
@@ -70,28 +73,36 @@ static int	make_split(char const *s, char **arr, char c)
 	return (1);
 }
 
+void	free_all(char **arr)
+{
+	int	a;
+
+	a = 0;
+	while (arr[a])
+	{
+		if (arr[a])
+			free(arr[a]);
+		a++;
+	}
+	free(arr);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	size_t	count;
-	size_t	a;
 
 	if (!s)
 		return (NULL);
 	count = count_words(s, c);
+	if (count >= (SIZE_MAX / sizeof(char *)) - 1)
+		return (NULL);
 	arr = malloc((count + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
 	if (!make_split(s, arr, c))
 	{
-		a = 0;
-		while (arr[a])
-		{
-			if (arr[a])
-				free(arr[a]);
-			a++;
-		}
-		free(arr);
+		free_all(arr);
 		return (NULL);
 	}
 	return (arr);

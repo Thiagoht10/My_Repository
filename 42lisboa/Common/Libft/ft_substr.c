@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 21:17:54 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/22 21:02:53 by thde-sou         ###   ########.fr       */
+/*   Created: 2025/05/04 11:46:25 by thde-sou          #+#    #+#             */
+/*   Updated: 2025/05/04 12:16:46 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	str_len;
 	size_t	len_exit;
 
+	if (!s)
+		return (NULL);
 	str_len = ft_strlen(s);
 	if (start >= str_len)
 		return (ft_strdup(""));
@@ -25,6 +27,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len_exit = str_len - start;
 	else
 		len_exit = len;
+	if (len_exit + 1 <= len_exit)
+		return (NULL);
 	str = malloc(len_exit + 1);
 	if (str == NULL)
 		return (NULL);

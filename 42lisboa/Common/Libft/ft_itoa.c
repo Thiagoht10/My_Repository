@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 22:04:59 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/30 10:36:13 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/04 13:18:25 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@ static int	count_dig(long int num)
 	return (a);
 }
 
-static char	*convertion(long int num, int len, int n)
+static char	*convertion(long int num, size_t len, int n)
 {
 	char	*result;
 	int		a;
 	int		b;
 
 	a = len - 1;
+	if (len + 1 <= len)
+		return (NULL);
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);

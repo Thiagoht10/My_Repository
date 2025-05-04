@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 21:42:47 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/01 17:33:48 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/04 15:00:38 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*new_str;
-	int		len_s;
-	int		a;
+	char		*new_str;
+	size_t		len_s;
+	size_t		a;
 
 	if (!s || !f)
 		return (NULL);
 	len_s = ft_strlen(s);
+	if (len_s + 1 <= len_s)
+		return (NULL);
 	new_str = malloc((len_s + 1) * sizeof(char));
 	if (!new_str)
 		return (NULL);
@@ -34,13 +36,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (new_str);
 }
 
-/*char    to_upper(unsigned int c, char s)
+char	to_upper(unsigned int c, char s)
 {
-        (void)c;
-        if (s >= 'a' && s <= 'z')
-                return (s - 32);
-        return (s);
-}*/
+	(void)c;
+	if (s >= 'a' && s <= 'z')
+		return (s - 32);
+	return (s);
+}
 
 /*char    to_upper(unsigned int c, char s);
 
