@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 05:01:11 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/04 12:59:52 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/04 18:56:11 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static int	make_split(char const *s, char **arr, char c)
 	return (1);
 }
 
-void	free_all(char **arr)
+static void	free_all(char **arr)
 {
 	int	a;
 
