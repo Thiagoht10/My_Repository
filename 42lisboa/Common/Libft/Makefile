@@ -6,7 +6,7 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 18:08:12 by thde-sou          #+#    #+#              #
-#    Updated: 2025/05/01 12:14:38 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/05/05 23:46:04 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,10 @@ $(MARKER) : $(OBJ) $(OBJ_BONUS)
 
 run: $(NAME) $(MAIN)
 	$(CC) $(MAIN) $(NAME)
+	./$(EXEC)
+
+leak: $(NAME) $(MAIN)
+	$(CC) -g -fsanitize=address,undefined,leak -O1 $(MAIN) $(NAME)
 	./$(EXEC)
 
 clean:
