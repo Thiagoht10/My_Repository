@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 21:42:47 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/04 15:00:38 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/05 17:05:54 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,21 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (new_str);
 }
 
-char	to_upper(unsigned int c, char s)
-{
-	(void)c;
-	if (s >= 'a' && s <= 'z')
-		return (s - 32);
-	return (s);
-}
+//char	to_upper(unsigned int c, char s)
+//{
+//	(void)c;
+//	if (s >= 'a' && s <= 'z')
+//		return (s - 32);
+//	return (s);
+//}
 
-/*char    to_upper(unsigned int c, char s);
-
-int     main(void)
-{
-        char    *str = "abCd";
-
-        str = ft_strmapi(str, to_upper);
-        printf("%s\n", str);
-        return (0);
-}*/
+//char    to_upper(unsigned int c, char s);
+//
+//int     main(void)
+//{
+//        char    *str = "abCd";
+//
+//        str = ft_strmapi(str, to_upper);
+//        printf("%s\n", str);
+//        return (0);
+//}
