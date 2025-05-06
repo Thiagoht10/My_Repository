@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 18:55:46 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/04 17:32:12 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/06 06:10:57 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ t_list	*ft_lstnew(void *content)
 	return (node);
 }
 
-/*int     main(void)
+/* int     main(void)
 {        
         t_list  *nodo;
         int     valor = 42;
         nodo = ft_lstnew(&valor);
         if (nodo)
                 printf("conteudo do nó: %d\n", *(int *)(nodo->content));
+        free(nodo);
         return (0);
-}*/
+} */
