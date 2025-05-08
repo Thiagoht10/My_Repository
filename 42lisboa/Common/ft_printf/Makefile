@@ -6,12 +6,14 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/07 19:52:12 by thde-sou          #+#    #+#              #
-#    Updated: 2025/05/07 23:08:35 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/05/08 20:28:22 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 FLAGS = -Wall -Wextra -Werror
+MAIN = main.c
+EXEC = a.out
 
 NAME = libftprintf.a
 LIBFT_DIR = libft
@@ -32,8 +34,8 @@ $(NAME): $(OBJ)
 	$(CC) $(FLAGS) -c $< -o $@
 
 run: $(NAME) $(LIBFT)
-	cc main.c $(NAME) $(LIBFT)
-	./a.out
+	cc $(MAIN) $(NAME) $(LIBFT)
+	./$(EXEC)
 
 clean:
 	$(MAKE) -C $(LIBFT_DIR) clean
@@ -41,8 +43,8 @@ clean:
 
 fclean: clean
 	$(MAKE) -C $(LIBFT_DIR) fclean
-	rm -f $(NAME) a.out
+	rm -f $(NAME) $(EXEC)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all run clean fclean re

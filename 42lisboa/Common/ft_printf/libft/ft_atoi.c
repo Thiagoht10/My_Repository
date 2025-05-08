@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 16:07:28 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/20 19:04:04 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/08 20:14:57 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int	ft_atoi(const char *nptr)
 	return (res * sign);
 }
 
-int     main(void)
+/* int	main(void)
 {
         char    *str = "            -217";
 
         printf("%d vs %d\n", atoi(str), ft_atoi(str));
         return (0);
-}
+} */
