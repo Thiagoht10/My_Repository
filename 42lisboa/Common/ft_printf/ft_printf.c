@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 21:08:15 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/08 20:53:56 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/10 03:04:38 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,20 @@ static int	ft_format(va_list args, const char format)
 {
 	if (format == 'c')
 		return (put_char(va_arg(args, int)));
-	if (format == 's')
+	else if (format == 's')
 		return (put_str(va_arg(args, char *)));
-	if (format == 'p')
+	else if (format == 'p')
 		return (put_pointer(va_arg(args, void *)));
+	else if (format == 'd' || format == 'i')
+		return (put_int(va_arg(args, int)));
+	else if (format == 'u')
+		return (put_unsigned(va_arg(args, unsigned int)));
+	else if (format == 'x')
+		return (put_hex(va_arg(args, unsigned int)));
+	else if (format == 'X')
+		return (put_hex_upper(va_arg(args, unsigned int)));
+	else if(format == '%')
+		return (put_porcent('%'));
 	return (0);
 }
 
@@ -31,6 +41,8 @@ int	ft_printf(const char *format, ...)
 
 	a = 0;
 	total = 0;
+	if (!format)
+		return (0);
 	va_start(args, format);
 	while (format[a])
 	{
@@ -39,12 +51,10 @@ int	ft_printf(const char *format, ...)
 			total += ft_format(args, format[a + 1]);
 			a += 2;
 		}
+		else if (format[a] == '%' && !format[a +1])
+			break ;
 		else
-		{
-			ft_putchar_fd(format[a], 1);
-			total++;
-			a++;
-		}
+			put_format(&a, &total, format[a]);
 	}
 	va_end(args);
 	return (total);
