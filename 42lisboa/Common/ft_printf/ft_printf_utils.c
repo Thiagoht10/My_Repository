@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 21:33:41 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/10 03:30:53 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/10 04:31:25 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	put_pointer(void *prt)
 
 int	put_int(int n)
 {
-	int 		count;
+	int			count;
 	long int	un;
 
 	count = 0;

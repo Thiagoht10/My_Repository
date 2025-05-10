@@ -28,7 +28,7 @@ static int	ft_format(va_list args, const char format)
 		return (put_hex(va_arg(args, unsigned int)));
 	else if (format == 'X')
 		return (put_hex_upper(va_arg(args, unsigned int)));
-	else if(format == '%')
+	else if (format == '%')
 		return (put_porcent('%'));
 	return (0);
 }
@@ -51,7 +51,7 @@ int	ft_printf(const char *format, ...)
 			total += ft_format(args, format[a + 1]);
 			a += 2;
 		}
-		else if (format[a] == '%' && !format[a +1])
+		else if (format[a] == '%' && !format[a + 1])
 			break ;
 		else
 			put_format(&a, &total, format[a]);

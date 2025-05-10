@@ -19,15 +19,15 @@
 # include <string.h>
 # include <unistd.h>
 
-int	    put_char(int c);
-int	    ft_printf(const char *format, ...);
-int	    put_str(char *str);
-int	    put_pointer(void *prt);
-int	    put_int(int n);
-int     put_unsigned(unsigned int c);
-int     put_hex(unsigned int num);
-int     put_hex_upper(unsigned int num);
-int     put_porcent(char c);
-void    put_format(int *a, int *total, char format);
-int	    putnbr_base(unsigned long n, const char *base);
+int		put_char(int c);
+int		ft_printf(const char *format, ...);
+int		put_str(char *str);
+int		put_pointer(void *prt);
+int		put_int(int n);
+int		put_unsigned(unsigned int c);
+int		put_hex(unsigned int num);
+int		put_hex_upper(unsigned int num);
+int		put_porcent(char c);
+void	put_format(int *a, int *total, char format);
+int		putnbr_base(unsigned long n, const char *base);
 #endif
