@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 21:33:41 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/10 04:31:25 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/10 18:32:40 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,22 +59,5 @@ int	put_int(int n)
 		un = -un;
 	}
 	count += putnbr_base((unsigned long)un, "0123456789");
-	return (count);
-}
-
-int	putnbr_base(unsigned long n, const char *base)
-{
-	unsigned long	base_len;
-	int				count;
-
-	base_len = 0;
-	count = 0;
-	while (base[base_len])
-		base_len++;
-	if (base_len < 2)
-		return (0);
-	if (n >= base_len)
-		count += putnbr_base(n / base_len, base);
-	count += write(1, &base[n % base_len], 1);
 	return (count);
 }
