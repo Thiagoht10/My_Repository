@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 18:03:55 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/10 22:13:37 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/11 04:00:49 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,7 @@ int	putnbr_base(unsigned long n, const char *base)
 	if (!base)
 		return (0);
 	if (!repeat_char_base(base))
-	{
 		return (0);
-	}
 	while (base[base_len])
 		base_len++;
 	if (base_len < 2)

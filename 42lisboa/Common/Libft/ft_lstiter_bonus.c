@@ -23,24 +23,24 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 
-void    lst_f(void *content)
+void	lst_f(void *content)
 {
-        int             a;
-        char    *str;
+	int		a;
+	char	*str;
 
-        a = 0;
-        str = (char *)content;
-        while (str[a] != '\0')
-        {
-                if (str[a] >= 'a' && str[a] <= 'z')
-                        str[a] -= 32;
-                a++;
-        }
+	a = 0;
+	str = (char *)content;
+	while (str[a] != '\0')
+	{
+		if (str[a] >= 'a' && str[a] <= 'z')
+			str[a] -= 32;
+		a++;
+	}
 }
 
 /* void    lst_f(void *content);
 
-int     main(void)
+int	main(void)
 {
         t_list  *n1;
         t_list  *n2;
