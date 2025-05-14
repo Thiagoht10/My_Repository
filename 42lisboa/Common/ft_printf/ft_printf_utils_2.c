@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 01:10:17 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/10 04:33:42 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/14 22:01:10 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,49 @@
 
 int	put_unsigned(unsigned int c)
 {
-	int	n;
+	char	*str;
+	int		count;
 
-	n = putnbr_base(c, "0123456789");
-	return (n);
+	str = ft_itoa_base(c, "0123456789");
+	if (!str)
+		return (0);
+	count = ft_strlen(str);
+	ft_putstr_fd(str, 1);
+	free(str);
+	return (count);
 }
 
 int	put_hex(unsigned int num)
 {
-	int	n;
+	int		count;
+	char	*str;
 
-	n = putnbr_base(num, "0123456789abcdef");
-	return (n);
+	str = ft_itoa_base(num, "0123456789abcdef");
+	if (!str)
+		return (0);
+	count = ft_strlen(str);
+	ft_putstr_fd(str, 1);
+	free(str);
+	return (count);
 }
 
 int	put_hex_upper(unsigned int num)
 {
-	int	n;
+	int		count;
+	char	*str;
 
-	n = putnbr_base(num, "0123456789ABCDEF");
-	return (n);
+	str = ft_itoa_base(num, "0123456789ABCDEF");
+	if (!str)
+		return (0);
+	count = ft_strlen(str);
+	ft_putstr_fd(str, 1);
+	free(str);
+	return (count);
 }
 
-int	put_porcent(char c)
+void	put_porcent(char c)
 {
 	ft_putchar_fd(c, 1);
-	return (1);
 }
 
 void	put_format(int *a, int *total, char format)

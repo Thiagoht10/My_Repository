@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 21:08:15 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/10 04:38:55 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/14 22:00:46 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_format(va_list args, const char format)
 	else if (format == 'X')
 		return (put_hex_upper(va_arg(args, unsigned int)));
 	else if (format == '%')
-		return (put_porcent('%'));
+		return (put_porcent('%'), 1);
 	return (0);
 }
 
@@ -42,7 +42,7 @@ int	ft_printf(const char *format, ...)
 	a = 0;
 	total = 0;
 	if (!format)
-		return (0);
+		return (-1);
 	va_start(args, format);
 	while (format[a])
 	{

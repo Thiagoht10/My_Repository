@@ -6,7 +6,7 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/07 19:52:12 by thde-sou          #+#    #+#              #
-#    Updated: 2025/05/10 18:13:48 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/05/14 18:53:44 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 SANITIZE = -g -fsanitize=address,undefined,leak -O1
 
-SRC = ft_printf.c ft_printf_utils.c ft_printf_utils_2.c ft_printf_utils_3.c
+SRC = ft_printf.c ft_printf_utils.c ft_printf_utils_2.c
 OBJ = $(SRC:.c=.o)
 
 all: $(LIBFT) $(NAME)
