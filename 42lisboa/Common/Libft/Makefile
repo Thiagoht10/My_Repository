@@ -6,7 +6,7 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 18:08:12 by thde-sou          #+#    #+#              #
-#    Updated: 2025/05/11 05:08:55 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/05/11 19:40:06 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ MARKER = .lib_bonus_created
 MAIN = main.c
 
 EXEC = a.out
+
+SANITIZE = -g -fsanitize=address,undefined,leak -O1
 
 SRC = ft_atoi.c ft_isprint.c  ft_putchar_fd.c  ft_striteri.c  ft_strnstr.c \
 ft_bzero.c    ft_itoa.c     ft_putendl_fd.c  ft_strjoin.c   ft_strrchr.c \
@@ -56,7 +58,7 @@ run: $(NAME) $(MAIN)
 	./$(EXEC)
 
 leak: $(NAME) $(MAIN)
-	$(CC) -g -fsanitize=address,undefined,leak -O1 $(MAIN) $(NAME)
+	$(CC) $(SANITIZE) $(MAIN) $(NAME)
 	./$(EXEC)
 
 clean:

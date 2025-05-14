@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 22:16:39 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/04/30 16:14:40 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/06 06:22:55 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,24 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 
-/*void    lst_f(void *content)
+void	lst_f(void *content)
 {
-        int             a;
-        char    *str;
+	int		a;
+	char	*str;
 
-        a = 0;
-        str = (char *)content;
-        while (str[a] != '\0')
-        {
-                if (str[a] >= 'a' && str[a] <= 'z')
-                        str[a] -= 32;
-                a++;
-        }
-}*/
+	a = 0;
+	str = (char *)content;
+	while (str[a] != '\0')
+	{
+		if (str[a] >= 'a' && str[a] <= 'z')
+			str[a] -= 32;
+		a++;
+	}
+}
 
-/*void    lst_f(void *content);
+/* void    lst_f(void *content);
 
-int     main(void)
+int	main(void)
 {
         t_list  *n1;
         t_list  *n2;
@@ -53,5 +53,6 @@ int     main(void)
         ft_lstadd_back(&n1, n3);
         ft_lstiter(n1, lst_f);
         printf("%s\n", (char *)(n3->content));
+        ft_lstclear(&n1, free);
         return (0);
-}*/
+} */

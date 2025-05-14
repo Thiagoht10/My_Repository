@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 18:57:18 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/04 11:53:01 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/05 23:51:48 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strdup(const char *s)
 	return (nova);
 }
 
-/*int	main(void)
+/* int	main(void)
 {
 	char	*string;
 	char	*c;
@@ -38,5 +38,6 @@ char	*ft_strdup(const char *s)
 	string = "abcd";
 	c = ft_strdup(string);
 	printf("%s\n", c);
+    free(c);
 	return (0);
-}*/
+} */

@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 21:33:41 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/10 18:32:40 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/14 13:35:16 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	put_str(char *str)
 int	put_pointer(void *prt)
 {
 	unsigned long	address;
+	char			*str;
 	int				total;
 
 	if (!prt)
@@ -40,8 +41,13 @@ int	put_pointer(void *prt)
 		return (5);
 	}
 	address = (unsigned long)prt;
+	str = ft_itoa_base(address, "0123456789abcdef");
+	if (!str)
+		return (0);
+	total = ft_strlen(str);
 	write(1, "0x", 2);
-	total = putnbr_base(address, "0123456789abcdef");
+	ft_putstr_fd(str, 1);
+	free(str);
 	return (total + 2);
 }
 
