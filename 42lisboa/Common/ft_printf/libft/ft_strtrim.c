@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 04:17:35 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/06 00:00:12 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/04 12:26:48 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
-/* int     main(void)
+/*int     main(void)
 {
         const char      *str = "*hello";
         const char      *set = "*";
@@ -106,6 +106,5 @@ char	*ft_strtrim(char const *s1, char const *set)
                 a++;
         }
         printf("\ntamanho de res: %zu", ft_strlen(res));
-        free(res);
         return (0);
-} */
+}*/

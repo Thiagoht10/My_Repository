@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 05:01:11 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/05 23:49:33 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/04 18:56:11 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-/* int     main(void)
+/*int     main(void)
 {
         int     a;
         int     b;
@@ -123,8 +123,8 @@ char	**ft_split(char const *s, char c)
                 a++;
         }
         b = 0;
-        while (arr[b])
+        while (arr[a])
                 free(arr[b++]);
         free(arr);
         return (0);
-} */
+}*/

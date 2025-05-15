@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 21:30:30 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/05 23:55:10 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/04 13:26:20 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
                 printf("%d ", res[a]);
                 a++;
         }
-		free(res);
         return (0);
 }*/
