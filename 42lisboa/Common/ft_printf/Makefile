@@ -6,7 +6,7 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/16 20:40:45 by thde-sou          #+#    #+#              #
-#    Updated: 2025/05/16 22:07:53 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/05/16 22:14:42 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,11 +51,11 @@ leak: $(NAME)
 
 clean:
 	$(MAKE) -C $(LIBFT_DIR) clean
-	rm -f $(OBJ)
+	rm -rf $(OBJ)
 
 fclean: clean
 	$(MAKE) -C $(LIBFT_DIR) fclean
-	rm -f $(NAME) $(EXEC)
+	rm -rf $(NAME) $(EXEC)
 
 re: fclean all
 
