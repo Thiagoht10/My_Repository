@@ -6,7 +6,7 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/16 20:40:45 by thde-sou          #+#    #+#              #
-#    Updated: 2025/05/16 22:14:42 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/05/17 14:03:28 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,12 +31,8 @@ $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR) bonus
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(AR) rcs $(NAME) $(OBJ)
-	@mkdir -p .tmp_libft
-	@cp $(LIBFT) .tmp_libft/libft.a
-	@cd .tmp_libft && $(AR) x libft.a
-	@for file in .tmp_libft/*.o; do $(AR) rcs $(NAME) $$file; done
-	@rm -rf .tmp_libft
+	@cp $(LIBFT) $(NAME)
+	@$(AR) rcs $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
