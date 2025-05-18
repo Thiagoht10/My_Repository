@@ -6,7 +6,7 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/16 20:40:45 by thde-sou          #+#    #+#              #
-#    Updated: 2025/05/17 14:03:28 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/05/18 13:35:13 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,7 @@ $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR) bonus
 
 $(NAME): $(OBJ) $(LIBFT)
-	@cp $(LIBFT) $(NAME)
-	@$(AR) rcs $(NAME) $(OBJ)
+	@$(AR) rcsT $(NAME) $(OBJ) $(LIBFT)
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
