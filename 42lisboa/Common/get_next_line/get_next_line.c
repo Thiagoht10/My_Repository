@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 19:16:56 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/19 20:08:04 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/22 18:49:12 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ char	*get_next_line(int fd)
 {
 	static char	buffer[BUFFER_SIZE + 1];
 	char		*linha;
-	size_t		res;
+	size_t		feedback;
 
 	linha = NULL;
 	while (1)
 	{
-		res = ft_read(buffer, &linha, fd);
-		if (res == 0)
+		feedback = build_line(buffer, &linha, fd);
+		if (feedback == 0)
 			break ;
-		if (res == 2)
+		if (feedback == 2)
 			return (NULL);
 		if (newline(buffer))
 		{
@@ -46,7 +46,10 @@ int	main(void)
 
 	fd = open("arquivo.txt", O_RDONLY);
 	if (fd < 0)
+	{
+		printf("%s\n", "ABERTURA DO ARQUIVO FALHOU!");
 		return (1);
+	}
 	lido = get_next_line(fd);
 	printf("%s", lido);
 	free(lido);

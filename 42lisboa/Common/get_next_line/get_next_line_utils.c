@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 19:17:25 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/19 20:18:49 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:00:00 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,10 @@ int	newline(char *s)
 }
 
 /* Função auxiliar do get_next_line */
-int	ft_read(char *buffer, char **linha, int fd)
+/* Forma a nova linha e retorna erros */
+/* Menor que zero. Erros de leitura ou alocação falhou */
+/* Retorna 0 se o arquivo estiver vazio ou fim do arquivo */
+int	build_line(char *buffer, char **linha, int fd)
 {
 	ssize_t	bytes;
 
