@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 19:16:56 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/24 03:36:54 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/24 13:09:27 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,12 @@ char	*get_next_line(int fd)
 	printf("%s", lido);
 	free(lido);
 	lido = get_next_line(fd);
+	printf("%s", lido);
+	free(lido);
+	lido = get_next_line(fd3);
+	printf("%s", lido);
+	free(lido);
+	lido = get_next_line(fd2);
 	printf("%s", lido);
 	free(lido);
 	lido = get_next_line(fd3);
