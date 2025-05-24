@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:53:17 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/23 21:02:59 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/24 03:24:53 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <string.h>
 # include <unistd.h>
 
-#ifndef MAX_FD
+# ifndef MAX_FD
 #  define MAX_FD 1024
 # endif
 

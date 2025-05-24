@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 19:16:56 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/23 21:03:30 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/24 03:36:54 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,16 @@ char	*get_next_line(int fd)
 	return (NULL);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int		fd;
 	int		fd2;
+	int		fd3;
 	char	*lido;
 
 	fd = open("arquivo.txt", O_RDONLY);
-	fd2 = open("arquivo2.txt", O_RDONLY);
-	if (fd < 0)
-	{
-		printf("%s\n", "ABERTURA DO ARQUIVO FALHOU!");
-		return (1);
-	}
-	if (fd2 < 0)
-	{
-		printf("%s\n", "ABERTURA DO ARQUIVO FALHOU!");
-		return (1);
-	}
+	fd2 = open("get_next_line.h", O_RDONLY);
+	fd3 = open("arquivo2.txt", O_RDONLY);
 	lido = get_next_line(fd);
 	printf("%s", lido);
 	free(lido);
@@ -66,9 +58,9 @@ int	main(void)
 	lido = get_next_line(fd);
 	printf("%s", lido);
 	free(lido);
-	lido = get_next_line(fd2);
+	lido = get_next_line(fd3);
 	printf("%s", lido);
 	free(lido);
 	close(fd);
 	return (0);
-}
+} */

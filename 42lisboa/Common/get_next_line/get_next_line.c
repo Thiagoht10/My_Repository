@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 19:16:56 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/23 19:43:01 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/24 03:37:31 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*get_next_line(int fd)
 	return (NULL);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int		fd;
 	char	*lido;
@@ -61,4 +61,4 @@ int	main(void)
 	free(lido);
 	close(fd);
 	return (0);
-}
+} */
