@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 19:16:56 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/24 13:10:06 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/25 22:53:05 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*get_next_line(int fd)
 	char		*linha;
 	size_t		feedback;
 
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
 	linha = NULL;
 	while (1)
 	{
