@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 19:16:56 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/25 22:53:05 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/27 23:43:31 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 char	*get_next_line(int fd)
 {
 	static char	buffer[BUFFER_SIZE + 1];
-	char		*linha;
+	char		*line;
 	size_t		feedback;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	linha = NULL;
+	line = NULL;
 	while (1)
 	{
-		feedback = build_line(buffer, &linha, fd);
+		feedback = build_line(buffer, &line, fd);
 		if (feedback == 0)
 			break ;
 		if (feedback == 2)
@@ -35,16 +35,16 @@ char	*get_next_line(int fd)
 		}
 		buffer[0] = '\0';
 	}
-	if (linha && *linha)
-		return (linha);
-	free(linha);
+	if (line && *line)
+		return (line);
+	free(line);
 	return (NULL);
 }
 
-/* int	main(void)
+int	main(void)
 {
 	int		fd;
-	char	*lido;
+	char	*read;
 
 	fd = open("arquivo.txt", O_RDONLY);
 	if (fd < 0)
@@ -52,15 +52,15 @@ char	*get_next_line(int fd)
 		printf("%s\n", "ABERTURA DO ARQUIVO FALHOU!");
 		return (1);
 	}
-	lido = get_next_line(fd);
-	printf("%s", lido);
-	free(lido);
-	lido = get_next_line(fd);
-	printf("%s", lido);
-	free(lido);
-	lido = get_next_line(fd);
-	printf("%s", lido);
-	free(lido);
+	read = get_next_line(fd);
+	printf("%s", read);
+	free(read);
+	read = get_next_line(fd);
+	printf("%s", read);
+	free(read);
+	read = get_next_line(fd);
+	printf("%s", read);
+	free(read);
 	close(fd);
 	return (0);
-} */
+}

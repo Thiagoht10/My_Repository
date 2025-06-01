@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 19:17:25 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/22 19:00:00 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/27 23:44:58 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int	newline(char *s)
 /* Forma a nova linha e retorna erros */
 /* Menor que zero. Erros de leitura ou alocação falhou */
 /* Retorna 0 se o arquivo estiver vazio ou fim do arquivo */
-int	build_line(char *buffer, char **linha, int fd)
+int	build_line(char *buffer, char **line, int fd)
 {
 	ssize_t	bytes;
 
@@ -99,13 +99,13 @@ int	build_line(char *buffer, char **linha, int fd)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
 		if (bytes < 0)
-			return (free(*linha), 2);
+			return (free(*line), 2);
 		if (bytes == 0)
 			return (0);
 		buffer[bytes] = '\0';
 	}
-	*linha = ft_strjoin(*linha, buffer);
-	if (!*linha)
+	*line = ft_strjoin(*line, buffer);
+	if (!*line)
 		return (2);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:53:17 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/05/22 18:13:16 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/05/27 23:44:06 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void	found_rest(char *buffer);
 size_t	ft_strlen(char const *s);
 int		newline(char *s);
 char	*ft_strjoin(char *s1, char const *s2);
-int		build_line(char *buffer, char **linha, int fd);
+int		build_line(char *buffer, char **line, int fd);
 
 #endif
