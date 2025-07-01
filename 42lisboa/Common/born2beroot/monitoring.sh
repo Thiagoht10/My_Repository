@@ -20,7 +20,7 @@ disk_use=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} END {pri
 disk_percent=$(df -m | grep "/dev/" | grep -v "/boot" |awk '{disk_u += $3; disk_t += $2} END {printf("%d"), disk_u / disk_t * 100}')
 
 # CPU LOAD
-cpu_fin=$(vmstat 1 2 | tail -1 | awk '{printf "%.1f", 100 - $15}')
+cpu_fin=$(timeout 2s vmstat 1 2 | tail -1 | awk '{printf "%.1f", 100 - $15}')
 
 # LAST BOOT
 lb=$(who -b | awk '{print $(NF-1) " " $NF}')
