@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 04:09:34 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/07/10 14:54:04 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/07/18 05:39:12 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,16 +94,16 @@ char	*ft_itoa_base(unsigned long n, const char *base)
 	return (nbr);
 }
 
-/* int	main(void)
+/*int	main(void)
 {
 	char	*str;
 	int		num;
 
-	num = 12626516;
-	str = ft_itoa_base(num, "0123456789abcdef");
+	num = 56f;
+	str = ft_itoa_base(num, "0123456789");
 	if (!str)
 		return (0);
 	printf("%s\n", str);
 	free(str);
 	return (0);
-} */
+}*/
