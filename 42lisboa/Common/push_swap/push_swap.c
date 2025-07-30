@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 09:14:29 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/07/29 21:57:44 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/07/30 09:56:50 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,9 +127,10 @@ int	main(int argc, char **argv)
 		a->items[j] = data[j];
 		j++;
 	}
+	a->count = len;
 	max_len = max_seq(a, len, &max_index);
 	liss = lis(a, len);
-	rro = rotate(&liss[0], a, len, &size);
+	rro = rotate_lis(&liss[0], a, len, &size);
 	y = 0;
 	while (y < max_len)
 		printf("%d.", liss[y++]);
@@ -137,6 +138,12 @@ int	main(int argc, char **argv)
 	y = 0;
 	while (y < size)
 		printf("%d.", rro[y++]);
+	rotate_up(a, b, len);
+	printf("\n");
+	y = 0;
+	while(y < b->count)
+		printf(".%d.", b->items[y++]);
+	printf("\n");
 	free(data);
 	free_stack(a);
 	free_stack(b);
