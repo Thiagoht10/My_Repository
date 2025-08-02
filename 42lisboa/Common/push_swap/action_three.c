@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   action_two.c                                       :+:      :+:    :+:   */
+/*   action_three.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/26 22:21:19 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/02 03:32:56 by thde-sou         ###   ########.fr       */
+/*   Created: 2025/08/02 03:27:11 by thde-sou          #+#    #+#             */
+/*   Updated: 2025/08/02 03:30:09 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_stack *a)
+void	aux_ra(t_stack *a)
 {
 	int	i;
 	int	tmp;
 
 	if (!a || a->count < 2)
 		return ;
-	i = a->count - 1;
-	tmp = a->items[a->count - 1];
-	while (i > 0)
+	i = 0;
+	tmp = a->items[0];
+	while (i < a->count - 1)
 	{
-		a->items[i] = a->items[i - 1];
-		i--;
+		a->items[i] = a->items[i + 1];
+		i++;
 	}
-	a->items[0] = tmp;
-	write(1, "rra\n", 4);
+	a->items[a->count - 1] = tmp;
 }
 
-void	rb(t_stack *b)
+void	aux_rb(t_stack *b)
 {
 	int	i;
 	int	tmp;
@@ -45,10 +44,26 @@ void	rb(t_stack *b)
 		i++;
 	}
 	b->items[b->count - 1] = tmp;
-	write(1, "rb\n", 3);
 }
 
-void	rrb(t_stack *b)
+void	aux_rra(t_stack *a)
+{
+	int	i;
+	int	tmp;
+
+	if (!a || a->count < 2)
+		return ;
+	i = a->count - 1;
+	tmp = a->items[a->count - 1];
+	while (i > 0)
+	{
+		a->items[i] = a->items[i - 1];
+		i--;
+	}
+	a->items[0] = tmp;
+}
+
+void	aux_rrb(t_stack *b)
 {
 	int	i;
 	int	tmp;
@@ -63,19 +78,4 @@ void	rrb(t_stack *b)
 		i--;
 	}
 	b->items[0] = tmp;
-	write(1, "rrb\n", 4);
-}
-
-void	rr(t_stack *a, t_stack *b)
-{
-	aux_ra(a);
-	aux_rb(b);
-	write(1, "rr\n", 3);
-}
-
-void	rrr(t_stack *a, t_stack *b)
-{
-	aux_rra(a);
-	aux_rrb(b);
-	write(1, "rrr\n", 4);
 }
