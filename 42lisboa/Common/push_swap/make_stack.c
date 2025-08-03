@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 15:45:04 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/07/26 16:03:47 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/03 15:28:19 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	count_num(int argc, char **argv)
 	return (found);
 }
 
-void	copy_stack(int *res, int *stack_a, int *len, int *i)
+void	copy_stack(long int *res, long int *stack_a, int *len, int *i)
 {
 	int	j;
 
@@ -54,18 +54,20 @@ void	copy_stack(int *res, int *stack_a, int *len, int *i)
 	}
 }
 
-int	*make_stack(int argc, char **argv, int *len)
+long int	*make_stack(int argc, char **argv, int *len)
 {
-	int	*stack_a;
-	int	arg;
-	int	i;
-	int	len_split;
-	int	*res;
+	long int	*stack_a;
+	int			arg;
+	int			i;
+	int			len_split;
+	long int	*res;
 
 	i = 0;
 	arg = 1;
 	*len = count_num(argc, argv);
-	stack_a = malloc(*len * sizeof(int));
+	stack_a = malloc(*len * sizeof(long int));
+	if (!stack_a)
+		return ((long *)-1);
 	while (arg < argc)
 	{
 		res = make_split(argv[arg], &len_split);
@@ -83,7 +85,7 @@ t_stack	*create_stack(int size)
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);
-	stack->items = malloc(size * sizeof(int));
+	stack->items = malloc(size * sizeof(long int));
 	if (!stack->items)
 	{
 		free(stack);

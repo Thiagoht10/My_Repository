@@ -6,17 +6,17 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 09:14:29 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/02 08:19:13 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/03 15:24:43 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	str_to_num(char *str)
+long int	str_to_num(char *str)
 {
-	int	i;
-	int	result;
-	int	sign;
+	int			i;
+	long int	result;
+	int			sign;
 
 	i = 0;
 	result = 0;
@@ -49,13 +49,13 @@ int	split_len(char **arr)
 	return (i);
 }
 
-int	*make_split(char *str, int *len)
+long int	*make_split(char *str, int *len)
 {
-	int		*ar;
-	char	**arr;
-	char	c;
-	int		i;
-	int		j;
+	long int	*ar;
+	char		**arr;
+	char		c;
+	int			i;
+	int			j;
 
 	c = ' ';
 	i = 0;
@@ -63,7 +63,7 @@ int	*make_split(char *str, int *len)
 	*len = 0;
 	arr = ft_split(str, c);
 	*len = split_len(arr);
-	ar = malloc(*len * sizeof(int));
+	ar = malloc(*len * sizeof(long int));
 	while (arr[i])
 	{
 		ar[i] = str_to_num(arr[i]);
@@ -75,7 +75,7 @@ int	*make_split(char *str, int *len)
 	return (ar);
 }
 
-int	is_valid_digit(int argc, char **argv)
+int	is_valid_input(int argc, char **argv)
 {
 	int	i;
 	int	arg;
@@ -98,92 +98,25 @@ int	is_valid_digit(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	int		j;
-	int		i;
-	int		y;
-	t_stack	*a;
-	t_stack	*b;
-	int		*data;
-	int		len;
-	int		*liss;
-	int		max_index;
-	int		max_len;
-	int		*rro;
-	int		size;
-	int		index;
-	int		mov;
-	int		num;
-	int		mv_a;
-	int		mv_b;
+	t_stack		*a;
+	t_stack		*b;
+	long int	*data;
+	int			len;
 
-	i = 0;
-	j = 0;
-	y = 0;
-	if (!is_valid_digit(argc, argv))
-	{
-		write(1, "Error\n", 6);
-		return (-1);
-	}
+	if (argc < 2)
+		return (0);
+	if (!is_valid_input(argc, argv))
+		return (print_error(), -1);
 	data = make_stack(argc, argv, &len);
+	if (!data)
+		return (-1);
+	if (!valid_number(data, len))
+		return (print_error(), -1);
 	a = create_stack(len);
 	b = create_stack(len);
-	while (j < len)
-	{
-		a->items[j] = data[j];
-		j++;
-	}
-	a->count = len;
-	num = 4;
-	max_len = max_seq(a, len, &max_index);
-	liss = lis(a, len);
-	rro = rotate_lis(&liss[0], a, len, &size);
-	/* y = 0;
-	while (y < max_len)
-		printf("%d.", liss[y++]);
-	printf("\n"); */
-	/* y = 0;
-	while (y < size)
-		printf("%d.", rro[y++]);
-	printf("\n"); */
+	assemble_stack(a, data, len);
 	rotate_up(a, b, len);
-	//pa(a, b);
-	//rra(a);
-	//pa(a, b);
-	//rra(a);
-	//pa(a, b);
-	//rr(a, b);
-	//ra(a);
-	//pa(a, b);
-	//ra(a);
-	//pa(a, b);
-	//rr(a, b);
-	//rr(a, b);
-	//pa(a, b);
-
-	//printf("\nlowest_value: %d", lowest_value(a, b));
-	//printf("\nhighest_value: %d", highest_value(a, b));
-	//printf("\nPrevious_value: %d", previous_value(a, b));
-	//printf("\nIs_found_stack_b : %d", is_found_stack_b(b, previous_value(a, b), &index));
-	//printf("\nSubsequent_value: %d\n", subsequent_value(18, a, b));
-	//printf("\nLess_effort: %d", less_effort(a, 4, &mov));
-	//printf("\nMove: %d", mov);
-	//mv_b = join_effort(a, b, &mv_a, 18);
-	//printf("\nMov_a: %d", mv_a);
-	//printf("\nMov_b: %d", mv_b);
-	//
-	//printf("\nEffort: %d", calculate_effort(a, b, &index));
-	//printf("\nIndex: %d", index);
-	//calculate_move(a, b, &mv_a, &mv_b);
 	rotate_down(a, b);
-	//printf("\n\n");
-	y = 0;
-	while(y < a->count)
-		printf(".%d.", a->items[y++]);
-	printf("\n");
-	y = 0;
-	while(y < b->count)
-		printf(".%d.", b->items[y++]);
-	//printf("\n");
 	free(data);
 	free_stack(a);
 	free_stack(b);

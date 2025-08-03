@@ -6,16 +6,15 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 20:57:07 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/02 21:54:57 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/03 16:23:28 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	subsequent_value(int n, t_stack *a, t_stack *b)
+int	subsequent_value(int n, t_stack *a)
 {
 	int	i;
-	int	j;
 	int	value;
 
 	i = 0;
@@ -24,8 +23,8 @@ int	subsequent_value(int n, t_stack *a, t_stack *b)
 	{
 		if (a->items[i] < value && a->items[i] > n)
 			value = a->items[i];
-        if(n > value)
-            value = lowest_value_a(a);
+		if (n > value)
+			value = lowest_value_a(a);
 		i++;
 	}
 	return (value);
@@ -81,7 +80,7 @@ int	join_effort(t_stack *a, t_stack *b, int *mov_a, int num)
 	int	mv_a;
 	int	mv_b;
 
-	n = subsequent_value(num, a, b);
+	n = subsequent_value(num, a);
 	e_a = less_effort(a, n, &mv_a);
 	e_b = less_effort(b, num, &mv_b);
 	if (e_a == 2)
@@ -92,4 +91,18 @@ int	join_effort(t_stack *a, t_stack *b, int *mov_a, int num)
 		return (mv_b * (-1));
 	else
 		return (mv_b);
+}
+
+int	is_inside(long int num, long int *x, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		if (num == x[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }

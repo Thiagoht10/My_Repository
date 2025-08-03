@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_one.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 01:05:02 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/02 22:56:47 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/03 16:19:00 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_inside(int num, int *x, int len)
-{
-	int	i;
-
-	i = 0;
-	while (i < len)
-	{
-		if (num == x[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
 int	lowest_value_a(t_stack *a)
 {
 	int	value;
@@ -43,10 +30,10 @@ int	lowest_value_a(t_stack *a)
 
 void	rotate_up(t_stack *a, t_stack *b, int len)
 {
-	int	*sequence;
-	int	size;
-	int	*liss;
-	int	pushed;
+	long int	*sequence;
+	int			size;
+	long int	*liss;
+	int			pushed;
 
 	pushed = 0;
 	liss = lis(a, len);
@@ -107,7 +94,7 @@ int	highest_value_a(t_stack *a)
 void	rotate_down(t_stack *a, t_stack *b)
 {
 	int	mov_a;
-	int mov_b;
+	int	mov_b;
 	int	duble_mov;
 	int	final_mov;
 	int	effort;
@@ -116,11 +103,11 @@ void	rotate_down(t_stack *a, t_stack *b)
 	{
 		duble_mov = calculate_move(a, b, &mov_a, &mov_b);
 		duble_move(a, b, duble_mov);
-		move_a(a, b, mov_a);
-		move_b(a, b, mov_b);
+		move_a(a, mov_a);
+		move_b(b, mov_b);
 		pa(a, b);
 	}
-	while(a->items[0] != lowest_value(a, b))
+	while (a->items[0] != lowest_value(a, b))
 	{
 		effort = less_effort(a, lowest_value(a, b), &final_mov);
 		final_move(a, final_mov, effort);

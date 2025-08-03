@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 04:14:27 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/02 08:13:03 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/03 16:20:50 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,29 +60,28 @@ int	calculate_effort(t_stack *a, t_stack *b, int *index)
 	return (result + 1);
 }
 
-int calculate_move(t_stack *a, t_stack *b, int *mov_a, int *mov_b)
+int	calculate_move(t_stack *a, t_stack *b, int *mov_a, int *mov_b)
 {
-    int duble_mov;
-    int index;
-    int effort;
-    t_move move;
+	int		duble_mov;
+	int		index;
+	t_move	move;
 
-    duble_mov = 0;
-    effort = calculate_effort(a, b, &index);
-    move.mov_b = join_effort(a, b, &move.mov_a, b->items[index]);
-    while(move.mov_a > 0 && move.mov_b > 0)
-    {
-        move.mov_a--;
-        move.mov_b--;
-        duble_mov++;
-    }
-    while (move.mov_a < 0 && move.mov_b < 0)
-    {
-        move.mov_a++;
-        move.mov_b++;
-        duble_mov--;
-    }
-    *mov_a = move.mov_a;
-    *mov_b = move.mov_b;
-    return (duble_mov);
+	duble_mov = 0;
+	calculate_effort(a, b, &index);
+	move.mov_b = join_effort(a, b, &move.mov_a, b->items[index]);
+	while (move.mov_a > 0 && move.mov_b > 0)
+	{
+		move.mov_a--;
+		move.mov_b--;
+		duble_mov++;
+	}
+	while (move.mov_a < 0 && move.mov_b < 0)
+	{
+		move.mov_a++;
+		move.mov_b++;
+		duble_mov--;
+	}
+	*mov_a = move.mov_a;
+	*mov_b = move.mov_b;
+	return (duble_mov);
 }

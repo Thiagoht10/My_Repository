@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 21:26:23 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/07/30 09:43:56 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/03 16:21:31 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static void	aux_dp(int len, t_stack *a, int *dp, int *prev)
 int	*dp(t_stack *a, int len, int **prev_out)
 {
 	int	i;
-	int	j;
 	int	*dp;
 	int	*prev;
 
@@ -82,18 +81,18 @@ int	max_seq(t_stack *a, int len, int *max_index)
 	return (max_len);
 }
 
-int	*lis(t_stack *a, int len)
+long int	*lis(t_stack *a, int len)
 {
-	int	index;
-	int	*lis;
-	int	max_len;
-	int	*pv;
-	int	i;
+	int			index;
+	long int	*lis;
+	int			max_len;
+	int			*pv;
+	int			i;
 
 	dp(a, len, &pv);
 	max_len = max_seq(a, len, &index);
 	i = max_len - 1;
-	lis = malloc(max_len * sizeof(int));
+	lis = malloc(max_len * sizeof(long int));
 	if (!lis)
 		return (NULL);
 	while (index != -1)
@@ -106,17 +105,17 @@ int	*lis(t_stack *a, int len)
 	return (lis);
 }
 
-int	*rotate_lis(int *f_element, t_stack *a, int len, int *size)
+long int	*rotate_lis(long int *f_element, t_stack *a, int len, int *size)
 {
-	t_stack	tmp;
-	int		*new_stack;
-	int		*new_lis;
-	int		i;
-	int		j;
+	t_stack		tmp;
+	long int	*new_stack;
+	long int	*new_lis;
+	int			i;
+	int			j;
 
 	i = 0;
 	j = 0;
-	new_stack = malloc(len * sizeof(int));
+	new_stack = malloc(len * sizeof(long int));
 	while (a->items[i] != f_element[0])
 		i++;
 	while (i < len)
