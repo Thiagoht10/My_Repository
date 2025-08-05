@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 21:26:23 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/03 16:21:31 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/04 13:35:55 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	*dp(t_stack *a, int len, int **prev_out)
 	i = 0;
 	dp = malloc(len * sizeof(int));
 	prev = malloc(len * sizeof(int));
-	if (!dp)
+	if (!dp || !prev)
 		return (NULL);
 	while (i < len)
 	{
@@ -116,6 +116,8 @@ long int	*rotate_lis(long int *f_element, t_stack *a, int len, int *size)
 	i = 0;
 	j = 0;
 	new_stack = malloc(len * sizeof(long int));
+	if (!new_stack)
+		return ((long *)-1);
 	while (a->items[i] != f_element[0])
 		i++;
 	while (i < len)

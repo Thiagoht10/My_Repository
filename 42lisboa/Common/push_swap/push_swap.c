@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 09:14:29 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/03 15:24:43 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/05 14:50:02 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ long int	*make_split(char *str, int *len)
 	arr = ft_split(str, c);
 	*len = split_len(arr);
 	ar = malloc(*len * sizeof(long int));
+	if (!arr || !ar)
+		return ((long *)-1);
 	while (arr[i])
 	{
 		ar[i] = str_to_num(arr[i]);
@@ -77,22 +79,27 @@ long int	*make_split(char *str, int *len)
 
 int	is_valid_input(int argc, char **argv)
 {
-	int	i;
-	int	arg;
+	int			i;
+	int			arg;
+	long int	count;
 
 	arg = 1;
+	count = 0;
 	while (arg < argc)
 	{
 		i = 0;
 		while (argv[arg][i] != '\0')
 		{
-			if (!ft_isdigit(argv[arg][i]) && argv[arg][i] != '-'
-				&& argv[arg][i] != '+' && argv[arg][i] != ' ')
+			if (ft_isdigit(argv[arg][i]))
+				count++;
+			if (!ft_isdigit(argv[arg][i]) && !check_sinal(argc, argv))
 				return (0);
 			i++;
 		}
 		arg++;
 	}
+	if (count == 0)
+		return (0);
 	return (1);
 }
 
@@ -114,9 +121,10 @@ int	main(int argc, char **argv)
 		return (print_error(), -1);
 	a = create_stack(len);
 	b = create_stack(len);
+	if (!a || !b)
+		return (0);
 	assemble_stack(a, data, len);
-	rotate_up(a, b, len);
-	rotate_down(a, b);
+	call_function(a, b, len);
 	free(data);
 	free_stack(a);
 	free_stack(b);

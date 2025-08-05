@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 04:14:27 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/03 16:20:50 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/05 14:31:43 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,31 @@ int	calculate_move(t_stack *a, t_stack *b, int *mov_a, int *mov_b)
 	*mov_a = move.mov_a;
 	*mov_b = move.mov_b;
 	return (duble_mov);
+}
+
+void	sort_three_small(t_stack *a)
+{
+	t_three	mov;
+
+	mov.f = a->items[0];
+	mov.s = a->items[1];
+	mov.t = a->items[2];
+	if (mov.f < mov.s && mov.s < mov.t)
+		return ;
+	if (mov.f > mov.s && mov.s < mov.t && mov.f < mov.t)
+		sa(a);
+	else if (mov.f > mov.s && mov.s > mov.t)
+	{
+		sa(a);
+		rra(a);
+	}
+	else if (mov.f > mov.s && mov.s < mov.t && mov.f > mov.t)
+		ra(a);
+	else if (mov.f < mov.s && mov.s > mov.t && mov.f < mov.t)
+	{
+		sa(a);
+		ra(a);
+	}
+	else if (mov.f < mov.s && mov.s > mov.t && mov.f > mov.t)
+		rra(a);
 }

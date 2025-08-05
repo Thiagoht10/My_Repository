@@ -6,7 +6,7 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 18:08:12 by thde-sou          #+#    #+#              #
-#    Updated: 2025/08/03 16:50:13 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/08/05 15:17:35 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,9 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 SANITIZE = -g -fsanitize=address,undefined,leak -O1
 
-SRC = action_one.c aux_one.c push_swap.c  sort_one.c action_three.c  aux_two.c \
-make_stack.c sort_three.c action_two.c sequence.c   sort_two.c
+SRC = action_one.c aux_one.c push_swap.c sort_one.c action_three.c  aux_two.c \
+make_stack.c sort_three.c action_two.c sequence.c sort_two.c sort_four.c \
+sort_three.c aux_three.c
 
 OBJ = $(SRC:.c=.o)
 

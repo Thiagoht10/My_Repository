@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 01:05:02 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/03 16:19:00 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/04 13:39:16 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	rotate_up(t_stack *a, t_stack *b, int len)
 	liss = lis(a, len);
 	sequence = rotate_lis(&liss[0], a, len, &size);
 	free(liss);
+	if (!sequence)
+		return ;
 	while (pushed < len - size)
 	{
 		if (!is_inside(a->items[0], sequence, size))

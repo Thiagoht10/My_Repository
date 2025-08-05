@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 09:11:24 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/03 16:23:09 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/05 15:13:00 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ typedef struct s_move
 	int			mov_b;
 	int			mov_duble;
 }				t_move;
+
+typedef struct s_three
+{
+	int			f;
+	int			s;
+	int			t;
+}				t_three;
 
 long int		str_to_num(char *str);
 int				split_len(char **arr);
@@ -85,4 +92,11 @@ void			final_move(t_stack *a, int final_mov, int effort);
 int				valid_number(long int *n, int len);
 void			print_error(void);
 void			assemble_stack(t_stack *a, long int *data, int len);
+int				check_sinal(int argc, char **argv);
+void			sort_three_small(t_stack *a);
+void			sort_five(t_stack *a, t_stack *b);
+int				stack_second_min(t_stack *s);
+int				stack_min(t_stack *s);
+void			call_function(t_stack *a, t_stack *b, int len);
+int				check_sort(t_stack *x);
 #endif
