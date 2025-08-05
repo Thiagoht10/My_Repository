@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 04:14:27 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/05 14:31:43 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/05 20:28:06 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,9 @@ void	sort_three_small(t_stack *a)
 	mov.f = a->items[0];
 	mov.s = a->items[1];
 	mov.t = a->items[2];
-	if (mov.f < mov.s && mov.s < mov.t)
+	if (a->size == 2 && !check_sort(a))
+		sa(a);
+	if (check_sort(a))
 		return ;
 	if (mov.f > mov.s && mov.s < mov.t && mov.f < mov.t)
 		sa(a);
