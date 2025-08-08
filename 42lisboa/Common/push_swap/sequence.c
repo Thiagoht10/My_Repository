@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 21:26:23 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/05 20:15:51 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/06 23:26:49 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ long int	*lis(t_stack *a, int len)
 	int			*pv;
 	int			i;
 
-	dp(a, len, &pv);
+	free(dp(a, len, &pv));
 	max_len = max_seq(a, len, &index);
 	i = max_len - 1;
 	lis = malloc(max_len * sizeof(long int));

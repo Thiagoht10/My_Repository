@@ -6,7 +6,7 @@
 #    By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 18:08:12 by thde-sou          #+#    #+#              #
-#    Updated: 2025/08/05 15:17:35 by thde-sou         ###   ########.fr        #
+#    Updated: 2025/08/08 20:05:01 by thde-sou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ EXEC = push_swap
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SANITIZE = -g -fsanitize=address,undefined,leak -O1
+LEAK_MEMORY = valgrind -s --leak-check=full
+
+ARGS = $(filter-out $@,$(MAKECMDGOALS))
 
 SRC = action_one.c aux_one.c push_swap.c sort_one.c action_three.c  aux_two.c \
 make_stack.c sort_three.c action_two.c sequence.c sort_two.c sort_four.c \
@@ -40,8 +42,8 @@ $(NAME): $(OBJ) $(LIBFT)
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-leak: $(NAME) $(MAIN)
-	$(CC) $(SANITIZE) $(NAME)
+leak: $(NAME)
+	$(LEAK_MEMORY) ./$(EXEC) $(ARGS)
 
 clean:
 	rm -f $(OBJ)

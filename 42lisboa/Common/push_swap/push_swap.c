@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 09:14:29 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/05 14:50:02 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/06 23:30:34 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int	main(int argc, char **argv)
 	if (!data)
 		return (-1);
 	if (!valid_number(data, len))
-		return (print_error(), -1);
+		return (free(data), print_error(), -1);
 	a = create_stack(len);
 	b = create_stack(len);
 	if (!a || !b)

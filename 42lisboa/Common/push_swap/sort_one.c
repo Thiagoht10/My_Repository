@@ -6,7 +6,7 @@
 /*   By: thde-sou <thde-sou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 01:05:02 by thde-sou          #+#    #+#             */
-/*   Updated: 2025/08/04 13:39:16 by thde-sou         ###   ########.fr       */
+/*   Updated: 2025/08/06 23:12:06 by thde-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	rotate_up(t_stack *a, t_stack *b, int len)
 	pushed = 0;
 	liss = lis(a, len);
 	sequence = rotate_lis(&liss[0], a, len, &size);
-	free(liss);
 	if (!sequence)
 		return ;
 	while (pushed < len - size)
@@ -51,6 +50,7 @@ void	rotate_up(t_stack *a, t_stack *b, int len)
 		else
 			ra(a);
 	}
+	free(liss);
 	free(sequence);
 }
 
